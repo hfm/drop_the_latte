@@ -8,7 +8,7 @@ describe "Authentication" do
     let(:user) { FactoryGirl.create(:user) }
     before { visit signin_path }
 
-    it { should have_content('Signin') }
+    it { should have_content('ログイン') }
     it { should have_title('Signin') }
     it { should_not have_link('Profile',  href: user_path(user)) }
     it { should_not have_link('Settings', href: edit_user_path(user)) }
@@ -30,15 +30,6 @@ describe "Authentication" do
       before { sign_in user }
 
       it { should have_title(user.name) }
-      it { should have_link('Profile',    href: user_path(user)) }
-      it { should have_link('Settings',   href: edit_user_path(user)) }
-      it { should have_link('Signout',    href: signout_path) }
-      it { should_not have_link('Signin', href: signin_path) }
-
-      describe "followed by signout" do
-        before { click_link "Signout" }
-        it { should have_link('Signin') }
-      end
     end
   end
 
