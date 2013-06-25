@@ -10,11 +10,12 @@ describe "Static pages" do
 
   describe "Home page" do
     before { visit root_path }
-    let(:heading)    { 'comet' }
+    let(:heading) { '' }
     let(:page_title) { '' }
 
     it_should_behave_like "all static pages"
     it { should_not have_title('| Home') }
+    it { should have_content('登録がお済みでない方はこちら') }
   end
 
   it "should have the right links on the layout" do
