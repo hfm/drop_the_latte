@@ -1,3 +1,22 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  margin: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.navbar {
+  background: #e86f67;
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+}
