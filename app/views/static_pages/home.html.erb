@@ -1,6 +1,18 @@
 <% provide(:title, 'comet') %>
-<div class="center hero-unit">
-  <h1>comet</h1>
+<div class="center">
 
-  <%= link_to "Sign Up >", signup_path, class: "btn btn-large btn-primary" %>
+  <p class="caption">登録済みの方はこちら</p>
+  <% if signed_in? %>
+    <%= link_to "Profile", current_user %>
+    <%= link_to "Settings", '#' %>
+    <%= link_to "Signout", signout_path, method: "delete" %>
+  <% else %>
+    <div class="button">
+      <%= link_to "ログイン", signin_path %>
+    </div>
+  <% end %>
+  <p class="caption">登録がお済みでない方はこちら</p>
+  <div class="button">
+    <%= link_to "登録", signup_path %>
+  </div>
 </div>
