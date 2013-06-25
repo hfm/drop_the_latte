@@ -16,3 +16,5 @@ Gemfile.lock
 /log/*.log
 /tmp
 /vendor/ruby/
+
+.rspec
