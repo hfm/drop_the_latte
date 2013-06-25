@@ -30,6 +30,7 @@ time, mark, audio, video {
 
 body {
   color: #444444;
+  width:auto;
 }
 
 article,aside,details,figcaption,figure,
@@ -38,12 +39,13 @@ footer,header,hgroup,menu,nav,section {
 }
 
 nav ul {
-    list-style:none;
+  list-style:none;
 }
 
 a {
   margin:0;
   padding:0;
+  color: #e86f67;
   font-size:100%;
   vertical-align:baseline;
   background:transparent;
@@ -64,6 +66,11 @@ img,iframe {
 }
 
 /* resret end */
+
+h1 {
+  font-size: 25px;
+  margin: 10px;
+}
 
 .row {
   padding:10px;
@@ -145,12 +152,13 @@ textarea:focus, textarea:hover {
 input[type="submit"] {
   width: auto;
   font-size:80%;
-  margin: 0;
+  font-weight: bold;
+  margin: 10px 0 0 0;
   padding: 10px;
   background: #e86f67;
   color: #FFF;
   -webkit-appearance: none;
-  -webkit-border-radius: 3px;
+  -webkit-border-radius: 5px;
 }
 
 .focus {
@@ -159,4 +167,8 @@ input[type="submit"] {
 
 .wd33per {
   width:30%;
+}
+
+.caption {
+  margin-top:10px;
 }
