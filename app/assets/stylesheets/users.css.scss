@@ -21,35 +21,60 @@ time, mark, audio, video {
   vertical-align:baseline;
   background:transparent;
   font-family: sans-serif;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  word-break:break-all;
+
+}
+
+body {
+  color: #444444;
+  width:auto;
 }
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
-    display:block;
+  display:block;
 }
 
 nav ul {
-    list-style:none;
+  list-style:none;
 }
 
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+  margin:0;
+  padding:0;
+  color: #e86f67;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration: none;
 }
 
 hr {
-    display:block;
-    height:1px;
-    border:0;
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+
+img,iframe {
+  max-width:100%;
 }
 
 /* resret end */
+
+h1 {
+  font-size: 25px;
+  margin: 10px;
+}
+
+.row {
+  padding:10px;
+}
 
 .navbar {
   background: #e86f67;
@@ -62,6 +87,88 @@ hr {
   margin-bottom: 10px;
 }
 
-.btn {
+.center {
+  text-align: center;
+  padding:10px;
+}
 
+.button {
+  width: auto;
+  background: #e86f67;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.button a {
+  color: #FFF;
+  font-weight: bold;
+  display: inline-block;
+  width: 280px;
+  height: 20px;
+}
+
+.btn {
+  background: #EEE;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: #111;
+  width: 100px;
+  padding: 10px 0;
+}
+
+form p {
+  font-size:100%;
+}
+
+input, select {
+  background: #dedede;
+  width: auto;
+  margin: 0;
+  font-size: 120%;
+  padding: 5px;
+  border: none;
+}
+
+input:focus, input:hover {
+  background:#dedede;
+}
+
+textarea {
+  width: auto;
+  font-size: 120%;
+  padding: 5px;
+  height: 50px;
+}
+
+textarea:focus, textarea:hover {
+  height: 150px;
+  background:#fff;
+}
+
+input[type="submit"] {
+  width: auto;
+  font-size:80%;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  background: #e86f67;
+  color: #FFF;
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px;
+}
+
+.focus {
+  background:#acf3ff;
+}
+
+.wd33per {
+  width:30%;
+}
+
+.caption {
+  margin-top:10px;
 }
