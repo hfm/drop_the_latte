@@ -1,17 +1,25 @@
 require 'spec_helper'
 
 describe "Static pages" do
+  subject { page }
 
-  let(:base_title) { "comet" }
+  shared_examples_for "all static pages" do
+    it { should have_content(heading) }
+    it { should have_title(full_title(page_title)) }
+  end
+
   describe "Home page" do
-    it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('comet')
-    end
+    before { visit root_path }
+    let(:heading)    { 'comet' }
+    let(:page_title) { '' }
 
-    it "should have the title 'comet'" do
-      visit '/static_pages/home'
-      expect(page).to have_title("#{base_title} | Home")
-    end
+    it_should_behave_like "all static pages"
+    it { should_not have_title('| Home') }
+  end
+
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "Sign Up >"
+    expect(page).to have_title(full_title('Signup'))
   end
 end
