@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.0.0.rc2'
 gem 'bootstrap-sass', '2.3.1.0'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'faker', '1.1.2'
 gem 'mysql2'
 
 group :development, :test do
