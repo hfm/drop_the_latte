@@ -6,10 +6,17 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let(:m) { FactoryGirl.create(:photo, user:user) }
+
     before { visit user_path(user) }
 
     it { should have_title("ダッシュボード") }
+
+    describe "photos" do
+      it { should have_content(user.photos.count) }
+    end
   end
+
   describe "signup page" do
     before { visit signup_path }
 

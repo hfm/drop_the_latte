@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :photos, dependent: :destroy
+
   has_secure_password
   before_save { email.downcase! }
   before_save :create_remember_token
