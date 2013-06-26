@@ -14,13 +14,13 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_content('Signup') }
-    it { should have_title(full_title('Signup')) }
+    it { should have_content('ユーザー登録') }
+    it { should have_title(full_title('登録')) }
   end
 
   describe "signup" do
     before { visit signup_path }
-    let(:submit) { "Create my account" }
+    let(:submit) { "登録" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -30,7 +30,7 @@ describe "User pages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_title('Signup') }
+        it { should have_title('登録') }
         it { should have_content('error') }
       end
     end
@@ -51,6 +51,7 @@ describe "User pages" do
         before { click_button submit }
         let(:user) { User.find_by(email: 'user@example.com') }
 
+        it { should have_link('Signout') }
         it { should have_title(user.name) }
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
@@ -66,7 +67,7 @@ describe "User pages" do
 
     describe "page" do
       it { should have_content("Update your profile") }
-      it { should have_title("Edit user") }
+      it { should have_title("設定変更") }
     end
 
     describe "with invalid information" do
@@ -88,6 +89,7 @@ describe "User pages" do
 
       it { should have_title(new_name) }
       it { should have_selector('div.alert.alert-success') }
+      it { should have_link('Signout', href: signout_path) }
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
