@@ -38,10 +38,6 @@ footer,header,hgroup,menu,nav,section {
   display:block;
 }
 
-nav ul {
-  list-style:none;
-}
-
 a {
   margin:0;
   padding:0;
@@ -76,13 +72,33 @@ h1 {
   padding:10px;
 }
 
+/* ヘッダー */
 .navbar {
+  height: 50px;
   background: #e86f67;
   margin: 0;
   text-align: center;
   padding: 10px;
+  position: relative;
 }
 
+/* ロゴ */
+#logo {
+  position: absolute;
+}
+
+/* メニュー */
+.container {
+  position: absolute;
+  right:10px;
+}
+
+.container ul li {
+  list-style:none;
+  float: left;
+}
+
+/* フォーム */
 .form {
   margin-bottom: 10px;
 }
