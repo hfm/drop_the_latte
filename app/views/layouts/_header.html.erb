@@ -1,13 +1,17 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar">
   <div class="navbar-inner">
+    <%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "logo") , user_path(current_user) %>
     <div class="container">
-      <%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "logo") , root_path %>
       <% if signed_in? %>
-        <%= link_to "プロフィール", current_user %>
-        <%= link_to "設定", edit_user_path(current_user) %>
-        <%= link_to "サインアウト", signout_path, method: "delete" %>
-      <% else %>
-        <%= link_to "ログイン", signin_path %>
+        <nav>
+          <ul>
+            <li class="user">
+              <%= link_to image_tag("layouts/user_icon.png", :size => "100x25", :alt => "user"), current_user %>
+            </li>
+            <li class="setting"><%= link_to image_tag("layouts/setings_icon.png", :size => "100x25", :alt => "settings"), edit_user_path(current_user) %></li>
+            <li class="logout"><%= link_to image_tag("layouts/logout_icon.png", :size => "100x25", :alt => "logout", :id => "logout"), signout_path, method: "delete" %></li>
+          </ul>
+        </nav>
       <% end %>
     </div>
   </div>
