@@ -6,15 +6,16 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
-    let(:m) { FactoryGirl.create(:photo, user:user) }
+    let(:p) { FactoryGirl.create(:photo, user:user) }
+    let(:c) { FactoryGirl.create(:comment, photo:p, user_id:user.id) }
 
     before { visit user_path(user) }
 
     it { should have_title("ダッシュボード") }
 
-    describe "photos" do
-      it { should have_content(user.photos.count) }
-    end
+   # describe "photos" do
+   #   it { should have_content(User.find(c.user_id).name) }
+   # end
   end
 
   describe "signup page" do
@@ -57,7 +58,7 @@ describe "User pages" do
         before { click_button submit }
         let(:user) { User.find_by(email: 'user@example.com') }
 
-        it { should have_link('サインアウト') }
+        it { should have_selector('li.logout') }
         it { should have_title('ダッシュボード') }
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
@@ -95,7 +96,9 @@ describe "User pages" do
 
       it { should have_title("ダッシュボード") }
       it { should have_selector('div.alert.alert-success') }
-      it { should have_link('サインアウト', href: signout_path) }
+      it { should have_selector('li.user') }
+      it { should have_selector('li.setting') }
+      it { should have_selector('li.logout') }
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
