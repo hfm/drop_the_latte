@@ -58,7 +58,7 @@ describe "User pages" do
         before { click_button submit }
         let(:user) { User.find_by(email: 'user@example.com') }
 
-        it { should have_link('サインアウト') }
+        it { should have_selector('li.logout') }
         it { should have_title('ダッシュボード') }
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
@@ -96,7 +96,9 @@ describe "User pages" do
 
       it { should have_title("ダッシュボード") }
       it { should have_selector('div.alert.alert-success') }
-      it { should have_link('サインアウト', href: signout_path) }
+      it { should have_selector('li.user') }
+      it { should have_selector('li.setting') }
+      it { should have_selector('li.logout') }
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end
