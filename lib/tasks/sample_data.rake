@@ -20,6 +20,7 @@ namespace :db do
       users.each { |user| user.photos.create!(took_date: took_date) }
     end
 
+    users = User.all(limit: 20)
     10.times do |n|
       users.each do |user|
         user.photos.each_with_index do |photo, m|

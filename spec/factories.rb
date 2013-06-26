@@ -13,7 +13,6 @@ FactoryGirl.define do
 
   factory :comment do
     content "おもちかわいい"
-    user
     photo
   end
 end
