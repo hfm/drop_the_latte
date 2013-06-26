@@ -23,4 +23,23 @@ describe Photo do
     before { @photo.took_date = " " }
     it { should_not be_valid }
   end
+
+  describe "comments associations" do
+    before { @photo.save }
+    let!(:old_comment) { FactoryGirl.create(:comment, photo:@photo, user_id:user.id, created_at: 1.day.ago) }
+    let!(:new_comment) { FactoryGirl.create(:comment, photo:@photo, user_id:user.id, created_at: 1.hour.ago) }
+
+    it "shourd have the right comments in the right order" do
+      expect(@photo.comments.to_a).to eq [new_comment, old_comment]
+    end
+
+    it "should destroy associated comments" do
+      comments = @photo.comments.to_a
+      @photo.destroy
+      expect(comments).not_to be_empty
+      comments.each do |comment|
+        expect(Comment.where(id: comment.id)).to be_empty
+      end
+    end
+  end
 end

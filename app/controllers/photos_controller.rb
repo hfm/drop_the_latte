@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :signed_in_user,
+  before_action :signed_in_user
   
   def create
     @photo = current_user.photos.build(photo_params)
