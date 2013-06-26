@@ -24,7 +24,7 @@ namespace :db do
       users.each do |user|
         user.photos.each_with_index do |photo, m|
           comment = "おもちかわいい #{n+1} #{m+1}"
-          photo.comments.create!(comment: comment)
+          photo.comments.create!(content: comment, user_id:user.id)
         end
       end
     end
