@@ -23,7 +23,6 @@ end
 gem 'sass-rails', '~> 4.0.0.rc2'
 gem 'uglifier', '~> 2.1.1'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
