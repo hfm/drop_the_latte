@@ -10,16 +10,16 @@ describe "Authentication" do
 
     it { should have_content('ログイン') }
     it { should have_title('ログイン') }
-    it { should_not have_link('Profile',  href: user_path(user)) }
-    it { should_not have_link('Settings', href: edit_user_path(user)) }
-    it { should_not have_link('Signout',  href: signout_path) }
+    it { should_not have_link('プロフィール',  href: user_path(user)) }
+    it { should_not have_link('設定', href: edit_user_path(user)) }
+    it { should_not have_link('サインアウト',  href: signout_path) }
   end
 
   describe "signin" do
     before { visit signin_path }
 
     describe "with invalid information" do
-      before { click_button "Signin" }
+      before { click_button "ログイン" }
 
       it { should have_title('ログイン') }
       it { should have_selector('div.alert.alert-error', text: 'Invalid') }
@@ -29,14 +29,14 @@ describe "Authentication" do
       let(:user) { FactoryGirl.create(:user) }
       before { sign_in user }
 
-      it { should have_title(user.name) }
-      it { should have_link('Profile',    href: user_path(user)) }
-      it { should have_link('Settings',   href: edit_user_path(user)) }
-      it { should have_link('Signout',    href: signout_path) }
-      it { should_not have_link('Signin', href: signin_path) }
+      it { should have_title("ダッシュボード") }
+      it { should have_link('プロフィール',    href: user_path(user)) }
+      it { should have_link('設定',   href: edit_user_path(user)) }
+      it { should have_link('サインアウト',    href: signout_path) }
+      it { should_not have_link('サインイン', href: signin_path) }
 
       describe "should be root_path when signout" do
-        before { click_link "Signout" }
+        before { click_link "サインアウト" }
         it { should have_title('comet') }
         it { should have_content("ログイン") }
       end
@@ -52,7 +52,7 @@ describe "Authentication" do
           visit edit_user_path(user)
           fill_in "Email",    with: user.email
           fill_in "Password", with: user.password
-          click_button "Signin"
+          click_button "ログイン"
         end
 
         describe "after signing in" do
@@ -67,11 +67,11 @@ describe "Authentication" do
               visit signin_path
               fill_in "Email",  with:user.email
               fill_in "Password", with: user.password
-              click_button "Signin"
+              click_button "ログイン"
             end
 
             it "should render the default (profile) page" do
-              expect(page).to have_title(user.name)
+              expect(page).to have_title("ダッシュボード")
             end
           end
         end
