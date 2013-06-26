@@ -1,4 +1,7 @@
-== README
+# comet
+[![Build Status](https://travis-ci.org/Tacahilo/drop_the_latte.png?branch=release,master)](https://travis-ci.org/Tacahilo/drop_the_latte)
+[![Coverage Status](https://coveralls.io/repos/Tacahilo/drop_the_latte/badge.png?branch=release)](https://coveralls.io/r/Tacahilo/drop_the_latte)
+## Readme
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
