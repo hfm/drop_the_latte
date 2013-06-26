@@ -1,9 +1,12 @@
 <% provide(:title, "ダッシュボード") %>
 
 <%= content_tag(:div, @user.photos.count) %>
-  <% @user.photos.each do |photo| %>
+<% @user.photos.each do |photo| %>
   <%= content_tag(:div, photo.took_date) %>
+  <% photo.comments.each do |comment| %>
+    <%= content_tag(:div, comment.comment) %>
   <% end %>
+<% end %>
 
 <% if @user.photos.any? %>
   <%= render @photos %>

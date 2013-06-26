@@ -19,5 +19,14 @@ namespace :db do
       took_date = rand(10.years).ago
       users.each { |user| user.photos.create!(took_date: took_date) }
     end
+
+    10.times do |n|
+      users.each do |user|
+        user.photos.each_with_index do |photo, m|
+          comment = "おもちかわいい #{n+1} #{m+1}"
+          photo.comments.create!(comment: comment)
+        end
+      end
+    end
   end
 end
