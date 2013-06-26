@@ -6,7 +6,8 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
-    let(:m) { FactoryGirl.create(:photo, user:user) }
+    let(:p) { FactoryGirl.create(:photo, user:user) }
+    let(:c) { FactoryGirl.create(:comment, photo:photo, user:user) }
 
     before { visit user_path(user) }
 
@@ -14,6 +15,8 @@ describe "User pages" do
 
     describe "photos" do
       it { should have_content(user.photos.count) }
+      it { should have_content(photo.comments.count) }
+      it { should have_content(c.comment) }
     end
   end
 
