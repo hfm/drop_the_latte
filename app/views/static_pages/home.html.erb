@@ -1,6 +1,8 @@
 <%= content_tag(:div, :class => "center") do -%>
   <%= content_tag(:p, "登録済みの方はこちら", :class => "caption") %>
-  <%= link_to "ログイン", signin_path %>
+  <%= content_tag(:div, :class => "button") do -%>
+    <%= link_to "ログイン", signin_path %>
+  <% end -%>
   <%= content_tag(:p, "登録がお済みでない方はこちら", :class => "caption") %>
   <%= content_tag(:div, :class => "button") do -%>
     <%= link_to "登録", signup_path %>
