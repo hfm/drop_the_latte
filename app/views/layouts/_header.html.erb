@@ -2,7 +2,13 @@
   <div class="navbar-inner">
     <div class="container">
       <%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "logo") , root_path %>
-        <%= link_to "Signin", signin_path %>
+      <% if signed_in? %>
+        <%= link_to "プロフィール", current_user %>
+        <%= link_to "設定", edit_user_path(current_user) %>
+        <%= link_to "サインアウト", signout_path, method: "delete" %>
+      <% else %>
+        <%= link_to "ログイン", signin_path %>
+      <% end %>
     </div>
   </div>
 </header>

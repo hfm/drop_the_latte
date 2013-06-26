@@ -4,6 +4,7 @@ gem 'rails', '~> 4.0.0.rc2'
 gem 'bootstrap-sass', '2.3.1.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
+gem 'will_paginate'
 gem 'mysql2'
 
 group :development, :test do
@@ -16,6 +17,7 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
   gem 'database_cleaner', '~> 1.0.0.rc2'
+gem 'coveralls', require: false
 end
 
 gem 'sass-rails', '~> 4.0.0.rc2'
