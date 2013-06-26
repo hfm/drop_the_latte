@@ -88,6 +88,18 @@ describe "Authentication" do
           specify { expect(response).to redirect_to(signin_path) }
         end
       end
+
+      describe "in the Photos controller" do
+        describe "submitting to the create action" do
+          before { post photos_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete photo_path(FactoryGirl.create(:photo)) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+      end
     end
 
     describe "as non-admin user" do
