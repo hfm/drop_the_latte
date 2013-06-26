@@ -4,7 +4,7 @@
 
 	meanMenu
 	--------
-	
+
 	To be used with jquery.meanmenu.js by Chris Wharton (http://www.meanthemes.com/plugins/meanmenu/)
 
 ####################################################################### */
@@ -15,14 +15,13 @@ display: none;
 }
 
 /* when under viewport size, .mean-container is added to body */
-.mean-container .mean-bar { 
+.mean-container .mean-bar {
 float: left;
 width: 100%;
 position: relative;
-background: #0c1923;
+background: #e86f67;
 padding: 4px 0;
 min-height: 42px;
-z-index: 999999;
 }
 .mean-container a.meanmenu-reveal {
 width: 22px;
@@ -48,10 +47,10 @@ background: #fff;
 height: 3px;
 margin-top: 3px;
 }
-.mean-container .mean-nav { 
+.mean-container .mean-nav {
 float: left;
 width: 100%;
-background: #0c1923;
+background: #e86f67;
 margin-top: 33px;
 }
 .mean-container .mean-nav ul {
@@ -83,7 +82,7 @@ width: 80%;
 padding: 1em 10%;
 border-bottom: 1px solid #f1f1f1;
 border-bottom: 1px solid rgba(255,255,255,0.25);
-opacity: 0.75; 
+opacity: 0.75;
 filter: alpha(opacity=75);
 text-shadow: none !important;
 visibility: visible;
@@ -104,9 +103,9 @@ padding: 1em 20%;
 width: 50%;
 padding: 1em 25%;
 }
-.mean-container .mean-nav ul li a:hover { 
+.mean-container .mean-nav ul li a:hover {
 background: #252525;
-background: rgba(255,255,255,0.1); 
+background: rgba(255,255,255,0.1);
 }
 .mean-container .mean-nav ul li a.mean-expand {
 width: 26px;
@@ -123,12 +122,12 @@ font-weight: 700;
 .mean-container .mean-nav ul li a.mean-expand:hover {
 background: none;
 }
-.mean-container .mean-push { 
+.mean-container .mean-push {
 float: left;
 width: 100%;
 padding: 0;
 margin: 0;
-clear: both; 
+clear: both;
 }
 .mean-nav .wrapper {
 width: 100%;

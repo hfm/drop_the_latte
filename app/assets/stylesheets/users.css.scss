@@ -72,25 +72,31 @@ h1 {
   padding:10px;
 }
 
+nav {
+  z-index: 1;
+  position: absolute;
+}
+
 /* ヘッダー */
 .navbar {
   height: 50px;
   background: #e86f67;
   margin: 0;
-  text-align: center;
   padding: 10px;
+}
+
+.navbar-inner {
   position: relative;
 }
 
 /* ロゴ */
 #logo {
   position: absolute;
+  left: 0px;
 }
 
 /* メニュー */
 .container {
-  position: absolute;
-  right:10px;
 }
 
 .container ul li {

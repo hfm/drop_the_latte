@@ -1,20 +1,17 @@
 <header class="navbar">
   <div class="navbar-inner">
     <%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "logo") , user_path(current_user) %>
-    <nav>
-    <ul>
-      <li><a href="#">Top Level Link</a></li>
-      <li><a href="#">Top Level Link</a></li>
-      <li><a href="#">Top Level Link</a></li>
-    </ul>
-  </nav>
     <div class="container">
       <% if signed_in? %>
-        <%= content_tag(:ul) do -%>
-          <li><%= link_to image_tag("layouts/user_icon.png", :size => "25x25", :alt => "user"), current_user %></li>
-          <li><%= link_to image_tag("layouts/setings_icon.png", :size => "25x25", :alt => "settings"), edit_user_path(current_user) %></li>
-          <li><%= link_to image_tag("layouts/logout_icon.png", :size => "25x25", :alt => "logout"), signout_path, method: "delete" %></li>
-        <% end -%>
+        <nav>
+          <ul>
+            <li>
+              <%= link_to image_tag("layouts/user_icon.png", :size => "100x25", :alt => "user"), current_user %>
+            </li>
+            <li><%= link_to image_tag("layouts/setings_icon.png", :size => "100x25", :alt => "settings"), edit_user_path(current_user) %></li>
+            <li><%= link_to image_tag("layouts/logout_icon.png", :size => "100x25", :alt => "logout"), signout_path, method: "delete" %></li>
+          </ul>
+        </nav>
       <% end %>
     </div>
   </div>
