@@ -2,16 +2,11 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <script>
-      jQuery(document).ready(function () {
-        jQuery('header navbar-inner nav').meanmenu();
-      });
-    </script>
   </head>
   <body>
     <%= render 'layouts/header' %>
@@ -21,5 +16,10 @@
       <% end %>
       <%= yield %>
     </div>
+    <script>
+      jQuery(document).ready(function () {
+        jQuery('header nav').meanmenu();
+      });
+    </script>
   </body>
 </html>
