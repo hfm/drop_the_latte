@@ -2,20 +2,24 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => false %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
     <%= render 'layouts/header' %>
-    <div class="container">
+    <div class="form">
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "alert alert-#{key}") %>
       <% end %>
       <%= yield %>
-      <%= debug(params) if Rails.env.development? %>
     </div>
+    <script>
+      jQuery(document).ready(function () {
+        jQuery('header nav').meanmenu();
+      });
+    </script>
   </body>
 </html>
