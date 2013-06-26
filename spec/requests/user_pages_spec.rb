@@ -6,11 +6,17 @@ describe "User pages" do
 
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
+    let(:m) { FactoryGirl.create(:photo, user:user) }
+
     before { visit user_path(user) }
 
-    it { should have_content(user.name) }
-    it { should have_title(user.name) }
+    it { should have_title("ダッシュボード") }
+
+    describe "photos" do
+      it { should have_content(user.photos.count) }
+    end
   end
+
   describe "signup page" do
     before { visit signup_path }
 
@@ -51,8 +57,8 @@ describe "User pages" do
         before { click_button submit }
         let(:user) { User.find_by(email: 'user@example.com') }
 
-        it { should have_link('Signout') }
-        it { should have_title(user.name) }
+        it { should have_link('サインアウト') }
+        it { should have_title('ダッシュボード') }
         it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
     end
@@ -71,7 +77,7 @@ describe "User pages" do
     end
 
     describe "with invalid information" do
-      before { click_button "Save changes" }
+      before { click_button "変更" }
 
       it { should have_content('error') }
     end
@@ -84,12 +90,12 @@ describe "User pages" do
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
         fill_in "Confirmation", with: user.password
-        click_button "Save changes"
+        click_button "変更"
       end
 
-      it { should have_title(new_name) }
+      it { should have_title("ダッシュボード") }
       it { should have_selector('div.alert.alert-success') }
-      it { should have_link('Signout', href: signout_path) }
+      it { should have_link('サインアウト', href: signout_path) }
       specify { expect(user.reload.name).to  eq new_name }
       specify { expect(user.reload.email).to eq new_email }
     end

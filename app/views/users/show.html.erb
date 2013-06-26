@@ -1,2 +1,10 @@
-<% provide(:title, @user.name) %>
-<h1><%= @user.name %></h1>
+<% provide(:title, "ダッシュボード") %>
+
+  <%= @user.photos.count %>
+  <% @user.photos.each do |photo| %>
+    <%= photo.took_date %>
+  <% end %>
+
+<% if @user.photos.any? %>
+  <%= render @photos %>
+<% end %>
