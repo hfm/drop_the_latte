@@ -4,6 +4,7 @@ gem 'rails', '~> 4.0.0.rc2'
 gem 'bootstrap-sass', '2.3.1.0'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.1.2'
+gem 'will_paginate'
 gem 'mysql2'
 
 group :development, :test do
@@ -22,7 +23,6 @@ end
 gem 'sass-rails', '~> 4.0.0.rc2'
 gem 'uglifier', '~> 2.1.1'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
