@@ -2,7 +2,9 @@
   <%#= @photo.took_date %>
 <%#= end -%>
 
-<%= link_to image_tag("layouts/logo.png", :size => "200x200", :id => "", :alt => "") , "#" %>
+<%= content_tag(:div) do -%>
+  <%= link_to image_tag("layouts/sugoi.jpg", :size => "200x200", :id => "", :alt => "") , "#" %>
+<% end -%>
 
 <%# if current_user? %>
   <!-- colored heart -->
