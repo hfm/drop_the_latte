@@ -1,10 +1,19 @@
-<% provide(:title, "ダッシュボード") %>
-
-<% @user.photos.each do |photo| %>
-  <%= content_tag(:div, photo.took_date) %>
-  <%= link_to image_tag("layouts/sugoi.jpg", :size => "200x200", :id => "", :alt => "") , "#" %>
-  <% photo.comments.each do |comment| %>
-    <%= content_tag(:div, User.find(comment.user_id).name) %>
-    <%= content_tag(:div, comment.content) %>
+<div class="dashboard_wrapper">
+  <% provide(:title, "ダッシュボード") %>
+    <div class="photoSet">
+      <% @user.photos.each do |photo| %>
+        <div class="date">
+          <%= content_tag(:div, photo.took_date) %>
+        </div>
+        <%= image_tag("layouts/sugoi.jpg", :id => "", :alt => "") %>
+        <h3>
+          <%= image_tag("layouts/comment_icon.png", :class => "comment", :alt => "comment") %>
+          Comments
+        </h3>
+        <% photo.comments.each do |comment| %>
+          <%= content_tag(:div, User.find(comment.user_id).name, :class => "comment_user" ) %>
+          <%= content_tag(:div, comment.content, :class => "comment_content") %>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>
