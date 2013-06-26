@@ -16,3 +16,6 @@ Gemfile.lock
 /log/*.log
 /tmp
 /vendor/ruby/
+
+*.orig
+coverage/
