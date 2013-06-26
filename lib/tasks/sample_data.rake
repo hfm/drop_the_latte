@@ -14,5 +14,10 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+    users = User.all(limit: 6)
+    50.times do
+      took_date = rand(10.years).ago
+      users.each { |user| user.photos.create!(took_date: took_date) }
+    end
   end
 end
