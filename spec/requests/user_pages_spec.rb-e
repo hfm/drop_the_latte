@@ -14,13 +14,13 @@ describe "User pages" do
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_content('ユーザー登録') }
-    it { should have_title(full_title('登録')) }
+    it { should have_content('Signup') }
+    it { should have_title(full_title('Signup')) }
   end
 
   describe "signup" do
     before { visit signup_path }
-    let(:submit) { "登録" }
+    let(:submit) { "Create my account" }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -30,7 +30,7 @@ describe "User pages" do
       describe "after submission" do
         before { click_button submit }
 
-        it { should have_title('登録') }
+        it { should have_title('Signup') }
         it { should have_content('error') }
       end
     end
@@ -67,7 +67,7 @@ describe "User pages" do
 
     describe "page" do
       it { should have_content("Update your profile") }
-      it { should have_title("設定変更") }
+      it { should have_title("Edit user") }
     end
 
     describe "with invalid information" do
