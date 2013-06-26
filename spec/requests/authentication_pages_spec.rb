@@ -30,13 +30,13 @@ describe "Authentication" do
       before { sign_in user }
 
       it { should have_title("ダッシュボード") }
-      it { should have_link('プロフィール',    href: user_path(user)) }
-      it { should have_link('設定',   href: edit_user_path(user)) }
-      it { should have_link('サインアウト',    href: signout_path) }
+      it { should have_selector('li.user') }
+      it { should have_selector('li.setting') }
+      it { should have_selector('li.logout') }
       it { should_not have_link('サインイン', href: signin_path) }
 
       describe "should be root_path when signout" do
-        before { click_link "サインアウト" }
+        before { find("#logout").click }
         it { should have_title('comet') }
         it { should have_content("ログイン") }
       end
