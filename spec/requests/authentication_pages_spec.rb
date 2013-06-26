@@ -9,7 +9,7 @@ describe "Authentication" do
     before { visit signin_path }
 
     it { should have_content('ログイン') }
-    it { should have_title('Signin') }
+    it { should have_title('ログイン') }
     it { should_not have_link('Profile',  href: user_path(user)) }
     it { should_not have_link('Settings', href: edit_user_path(user)) }
     it { should_not have_link('Signout',  href: signout_path) }
@@ -21,7 +21,7 @@ describe "Authentication" do
     describe "with invalid information" do
       before { click_button "Signin" }
 
-      it { should have_title('Signin') }
+      it { should have_title('ログイン') }
       it { should have_selector('div.alert.alert-error', text: 'Invalid') }
     end
 
@@ -30,6 +30,16 @@ describe "Authentication" do
       before { sign_in user }
 
       it { should have_title(user.name) }
+      it { should have_link('Profile',    href: user_path(user)) }
+      it { should have_link('Settings',   href: edit_user_path(user)) }
+      it { should have_link('Signout',    href: signout_path) }
+      it { should_not have_link('Signin', href: signin_path) }
+
+      describe "should be root_path when signout" do
+        before { click_link "Signout" }
+        it { should have_title('comet') }
+        it { should have_content("ログイン") }
+      end
     end
   end
 
@@ -48,7 +58,7 @@ describe "Authentication" do
         describe "after signing in" do
 
           it "should render the desired protected page" do
-            expect(page).to have_title('Edit user')
+            expect(page).to have_title('設定変更')
           end
 
           describe "when signing in again" do
@@ -70,7 +80,7 @@ describe "Authentication" do
       describe "in the Users controller" do
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
-          it { should have_title('Signin') }
+          it { should have_title('comet') }
         end
 
         describe "submitting to the update action" do
