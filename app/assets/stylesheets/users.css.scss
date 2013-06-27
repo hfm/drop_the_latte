@@ -89,10 +89,16 @@ nav {
   position: relative;
 }
 
+/* 写真アップロードボタン */
+#photo {
+  position: absolute;
+  left: 0px;
+}
+
 /* ロゴ */
 #logo {
   position: absolute;
-  left: 0px;
+  left: 100px;
 }
 
 /* メニュー */
