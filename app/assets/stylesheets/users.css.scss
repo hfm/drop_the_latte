@@ -89,10 +89,16 @@ nav {
   position: relative;
 }
 
+/* 写真アップロードボタン */
+#photo {
+  position: absolute;
+  left: 0px;
+}
+
 /* ロゴ */
 #logo {
   position: absolute;
-  left: 0px;
+  left: 100px;
 }
 
 /* メニュー */
@@ -148,11 +154,11 @@ form p {
 
 input, select {
   background: #dedede;
-  width: auto;
-  margin: 0;
+  width: 100%;
   font-size: 120%;
-  padding: 5px;
+  padding: 10px 0;
   border: none;
+  margin-top: 10px;
 }
 
 input:focus, input:hover {
@@ -160,27 +166,33 @@ input:focus, input:hover {
 }
 
 textarea {
-  width: auto;
+  width: 100%;
   font-size: 120%;
   padding: 5px;
   height: 50px;
 }
 
 textarea:focus, textarea:hover {
+
   height: 150px;
   background:#fff;
 }
 
 input[type="submit"] {
-  width: auto;
+  width: 100%;
   font-size:80%;
   font-weight: bold;
-  margin: 10px 0 0 0;
+  margin: 10px 0px;
   padding: 10px;
   background: #e86f67;
   color: #FFF;
+  border: none;
   -webkit-appearance: none;
   -webkit-border-radius: 5px;
+}
+
+.dashboard_wrapper{
+  padding: 10px;
 }
 
 .focus {
@@ -193,4 +205,51 @@ input[type="submit"] {
 
 .caption {
   margin-top:10px;
+}
+
+.photoSet {
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 20px;
+}
+
+.comment_icon {
+  float: left;
+}
+
+.comment_title {
+  float: left;
+  margin-left: 5px;
+}
+
+.comment_user {
+  color: #e86f67;
+  font-weight: bold;
+}
+
+.comment_created {
+  color: #aaaaaa;
+  font-size: 13px;
+  padding-top:10px;
+}
+
+.comment_content {
+  font-size: 13px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.date_this {
+  float:left;
+}
+
+.date_from {
+  color: #aaaaaa;
+  float:right;
+  font-size: 13px;
+  padding-top:10px;
 }

@@ -16,6 +16,7 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:photos) }
+  it { should respond_to(:comments) }
 
   it { should be_valid }
 
@@ -140,6 +141,27 @@ describe User do
       expect(photos).not_to be_empty
       photos.each do |photo|
         expect(Photo.where(id: photo.id)).to be_empty
+      end
+    end
+  end
+
+  describe "comment associations" do
+    before { @user.save }
+    let(:other) { FactoryGirl.create(:user) }
+    let(:photo) { FactoryGirl.create(:photo, user:@user) }
+    let!(:old_comment) do
+      FactoryGirl.create(:comment, user:@user, other_id:other.id, created_at: 1.day.ago)
+    end
+    let!(:new_comment) do
+      FactoryGirl.create(:comment, user:@user, other_id:other.id, created_at: 1.hour.ago)
+    end
+
+    it "should destroy associated comments" do
+      comments = @user.comments.to_a
+      @user.destroy
+      expect(comments).not_to be_empty
+      comments.each do |comment|
+        expect(Comment.where(id: comment.id)).to be_empty
       end
     end
   end
