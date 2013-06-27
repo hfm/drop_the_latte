@@ -9,6 +9,7 @@ describe Photo do
   subject { @photo }
 
   it { should respond_to(:took_date) }
+  it { should respond_to(:content) }
   it { should respond_to(:user_id) }
   it { should respond_to(:user) }
   its(:user) { should eq user }
@@ -25,12 +26,17 @@ describe Photo do
     it { should_not be_valid }
   end
 
+  describe "when content is not present" do
+    before { @photo.content = " "}
+    it { should_not be_valid }
+  end
+
   describe "comments" do
     before { @photo.save }
 
     describe "associations" do
-      let!(:old_comment) { FactoryGirl.create(:comment, photo:@photo, user_id:user.id, other_id:other.id, created_at: 1.day.ago) }
-      let!(:new_comment) { FactoryGirl.create(:comment, photo:@photo, user_id:user.id, other_id:other.id, created_at: 1.hour.ago) }
+      let!(:old_comment) { FactoryGirl.create(:comment, :photo => @photo, user_id:user.id, other_id:other.id, created_at: 1.day.ago) }
+      let!(:new_comment) { FactoryGirl.create(:comment, :photo => @photo, user_id:user.id, other_id:other.id, created_at: 1.hour.ago) }
 
       it "shourd have the right comments in the right order" do
         expect(@photo.comments.to_a).to eq [new_comment, old_comment]
@@ -47,7 +53,7 @@ describe Photo do
     end
 
     describe "has commented user" do
-      let(:comment) { FactoryGirl.create(:comment, photo:@photo, user_id:user.id, other_id:other.id) }
+      let(:comment) { FactoryGirl.create(:comment, photo_id:@photo, user_id:user.id, other_id:other.id) }
 
       it { expect(comment.other_id).to eq other.id }
     end
