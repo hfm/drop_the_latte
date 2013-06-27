@@ -8,12 +8,12 @@ describe "Comment pages" do
   before { sign_in user }
 
   describe "comment creation" do
-    before { visit root_path }
+    before { visit user_path(user) }
 
     describe "with invalid information" do
 
       it "should not create a comment" do
-        expect { click_button "Post" }.not_to change(Comment, :count)
+        expect { find("comment_btn").click }.not_to change(Comment, :count)
       end
 
       describe "error messages" do
@@ -24,7 +24,7 @@ describe "Comment pages" do
 
     describe "with valid information" do
 
-      before { fill_in 'comment_content', with: "Lorem ipsum" }
+      before { fill_in 'text_content', with: "Lorem ipsum" }
       it "should create a comment" do
         expect { click_button "Post" }.to change(Comment, :count).by(1)
       end
