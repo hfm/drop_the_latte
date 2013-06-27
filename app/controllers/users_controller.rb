@@ -4,7 +4,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @photo = @user.photos.paginate(page: params[:page])
+    @photos = @user.photos.paginate(page: params[:page])
+    @comments = @user.comments.paginate(page: params[:page])
   end
 
   def new
