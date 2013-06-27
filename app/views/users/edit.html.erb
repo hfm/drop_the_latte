@@ -5,7 +5,7 @@
   <div class="span6 offset3">
     <%= form_for(@user) do |f| %>
       <%= render 'fields', f: f %>
-      <%= f.submit "Save changes", class: "btn" %>
+      <%= f.submit "変更", :class => "btn" %>
     <% end %>
   </div>
 </div>

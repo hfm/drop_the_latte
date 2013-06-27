@@ -1,17 +1,17 @@
-<div class="center">
-
-  <p class="caption">登録済みの方はこちら</p>
-  <% if signed_in? %>
-    <%= link_to "Profile", current_user %>
-    <%= link_to "Settings", '#' %>
-    <%= link_to "Signout", signout_path, method: "delete" %>
-  <% else %>
-    <div class="button">
-      <%= link_to "ログイン", signin_path %>
+<%= content_tag(:div, :class => "center") do -%>
+  <div class="viewport">
+    <div class="flipsnap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
     </div>
-  <% end %>
-  <p class="caption">登録がお済みでない方はこちら</p>
-  <div class="button">
-    <%= link_to "登録", signup_path %>
   </div>
-</div>
+  <%= content_tag(:p, "登録済みの方はこちら", :class => "caption") %>
+  <%= content_tag(:div, :class => "button") do -%>
+    <%= link_to "ログイン", signin_path %>
+  <% end -%>
+  <%= content_tag(:p, "登録がお済みでない方はこちら", :class => "caption") %>
+  <%= content_tag(:div, :class => "button") do -%>
+    <%= link_to "登録", signup_path %>
+  <% end -%>
+<% end -%>

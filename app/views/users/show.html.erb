@@ -1,20 +1,23 @@
-<% provide(:title, @user.name) %>
-
-<%#= content_tag(:div :class => 'photo_times') -%>
-  <%#= @user.photo.time.24h %>
-  <%#= @user.photo.time.ago %>
-<%#= end -%>
-
-<%= link_to image_tag("layouts/logo.png", :size => "200x200", :id => "", :alt => "") , root_path %>
-<%# @user.photo.likes.users each do |user_obj| %>
-  <%# link_to user_obj.name, user_path(user_obj) %> 
-<%# end %>
-
-<%# if @user.photo.comments.count != 0 %>
-  <%# @user.photo.comments.each do |comment| %>
-    <%# content_tag(:div, :class => '') -%>
-      <%#= @comment.name %>
-      <%#= @comment.content %>
-    <%# end -%>
-  <%# end %>
-<%# end %>
+<%= content_tag(:div, :class => "dashboard_wrapper") do -%>
+  <% provide(:title, "ダッシュボード") %>
+  <% if @photos.any? %>
+    <%= content_tag(:div, :class => "photoSet") do -%>
+      <% @photos.each do |photo| %>
+        <%= content_tag(:div, photo.took_date, :class => "date") %>
+        <%= link_to image_tag("layouts/sugoi.jpg", :id => "", :alt => "") %>
+        <h3>
+          <%= form_for(Comment.new) do |f| %>
+            <%= hidden_field_tag 'photo_id', photo.id %>
+            <%= f.text_field("content", :class => "text_content") %>
+            <%= f.submit("", :size => "32x32", :class => "comment btn btn-#{photo.id}") %>
+          <% end %>
+        </h3>
+        <% if @comments.any? %>
+          <ul class="users_comments">
+            <%= render @comments %>
+          </ul>
+        <% end %>
+      <% end %>
+    <% end -%>
+  <% end %>
+<% end -%>

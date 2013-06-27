@@ -15,6 +15,8 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:remember_token) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:photos) }
+  it { should respond_to(:comments) }
 
   it { should be_valid }
 
@@ -118,5 +120,49 @@ describe User do
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
+  end
+
+  describe "photo associations" do
+    before { @user.save }
+    let!(:old_photo) do
+      FactoryGirl.create(:photo, user:@user, created_at: 1.day.ago)
+    end
+    let!(:new_photo) do
+      FactoryGirl.create(:photo, user:@user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right photos in the right order" do
+      expect(@user.photos.to_a).to eq [new_photo, old_photo]
+    end
+
+    it "should destroy associated photos" do
+      photos = @user.photos.to_a
+      @user.destroy
+      expect(photos).not_to be_empty
+      photos.each do |photo|
+        expect(Photo.where(id: photo.id)).to be_empty
+      end
+    end
+  end
+
+  describe "comment associations" do
+    before { @user.save }
+    let(:other) { FactoryGirl.create(:user) }
+    let(:photo) { FactoryGirl.create(:photo, user:@user) }
+    let!(:old_comment) do
+      FactoryGirl.create(:comment, photo:photo, user:@user, other_id:other.id, created_at: 1.day.ago)
+    end
+    let!(:new_comment) do
+      FactoryGirl.create(:comment, photo:photo, user:@user, other_id:other.id, created_at: 1.hour.ago)
+    end
+
+    it "should destroy associated comments" do
+      comments = @user.comments.to_a
+      @user.destroy
+      expect(comments).not_to be_empty
+      comments.each do |comment|
+        expect(Comment.where(id: comment.id)).to be_empty
+      end
+    end
   end
 end

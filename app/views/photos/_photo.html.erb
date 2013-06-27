@@ -1,0 +1,21 @@
+<%#= content_tag(:div :class => 'photo_times') -%>
+  <%#= @photo.took_date %>
+<%#= end -%>
+
+<%= content_tag(:div) do -%>
+  <%= link_to image_tag("layouts/sugoi.jpg", :size => "200x200", :id => "", :alt => "") , "#" %>
+<% end -%>
+
+<%# if current_user? %>
+  <!-- colored heart -->
+<%# else %>
+  <%# if @user.photo.likes.count != 0 %>
+    <!-- colored heart -->
+  <%# else %>
+    <!-- mono heart -->
+  <%# end %>
+<%# end %>
+
+<%# @user.photo.likes.users each do |user_obj| %>
+  <%# link_to user_obj.name, user_path(user_obj) %> 
+<%# end %>
