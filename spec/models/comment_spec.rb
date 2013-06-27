@@ -13,7 +13,6 @@ describe Comment do
   it { should respond_to(:other_id) }
   it { should respond_to(:photo_id) }
   its(:user) { should eq user }
-  its(:photo) { should eq photo }
 
   it { should be_valid }
 
