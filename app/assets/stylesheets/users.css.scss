@@ -229,6 +229,12 @@ input[type="submit"] {
   font-weight: bold;
 }
 
+.comment_created {
+  color: #aaaaaa;
+  font-size: 13px;
+  padding-top:10px;
+}
+
 .comment_content {
   font-size: 13px;
 }
@@ -239,10 +245,6 @@ input[type="submit"] {
 
 .date_this {
   float:left;
-}
-
-.date_icon {
-  float: right;
 }
 
 .date_from {
