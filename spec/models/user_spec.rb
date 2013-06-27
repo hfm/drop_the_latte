@@ -143,4 +143,24 @@ describe User do
       end
     end
   end
+
+  describe "comment associations" do
+    before { @user.save }
+    let(:photo) { FactoryGirl.create(:photo, user:@user) }
+    let!(:old_comment) do
+      FactoryGirl.create(:comment, photo:photo, user:@user, created_at: 1.day.ago)
+    end
+    let!(:new_comment) do
+      FactoryGirl.create(:comment, photo:photo, user:@user, created_at: 1.hour.ago)
+    end
+
+    it "should destroy associated comments" do
+      comments = @user.comments.to_a
+      @user.destroy
+      expect(comments).not_to be_empty
+      comments.each do |comment|
+        expect(Comment.where(id: comment.id)).to be_empty
+      end
+    end
+  end
 end
