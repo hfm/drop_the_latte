@@ -1,0 +1,255 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  font-family: sans-serif;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  word-break:break-all;
+
+}
+
+body {
+  color: #444444;
+  width:auto;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+  display:block;
+}
+
+a {
+  margin:0;
+  padding:0;
+  color: #e86f67;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration: none;
+}
+
+hr {
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
+}
+
+img,iframe {
+  max-width:100%;
+}
+
+/* resret end */
+
+h1 {
+  font-size: 25px;
+  margin: 10px;
+}
+
+.row {
+  padding:10px;
+}
+
+nav {
+  z-index: 1;
+  position: absolute;
+}
+
+/* ヘッダー */
+.navbar {
+  height: 50px;
+  background: #e86f67;
+  margin: 0;
+  padding: 10px;
+}
+
+.navbar-inner {
+  position: relative;
+}
+
+/* 写真アップロードボタン */
+#photo {
+  position: absolute;
+  left: 0px;
+}
+
+/* ロゴ */
+#logo {
+  position: absolute;
+  left: 100px;
+}
+
+/* メニュー */
+.container {
+}
+
+.container ul li {
+  list-style:none;
+  float: left;
+}
+
+/* フォーム */
+.form {
+  margin-bottom: 10px;
+}
+
+.center {
+  text-align: center;
+  padding:10px;
+}
+
+.button {
+  width: auto;
+  background: #e86f67;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.button a {
+  color: #FFF;
+  font-weight: bold;
+  display: inline-block;
+  width: 280px;
+  height: 20px;
+}
+
+.btn {
+  background: #EEE;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: #111;
+  width: 100px;
+  padding: 10px 0;
+}
+
+form p {
+  font-size:100%;
+}
+
+input, select {
+  background: #dedede;
+  width: 100%;
+  font-size: 120%;
+  padding: 10px 0;
+  border: none;
+  margin-top: 10px;
+}
+
+input:focus, input:hover {
+  background:#dedede;
+}
+
+textarea {
+  width: 100%;
+  font-size: 120%;
+  padding: 5px;
+  height: 50px;
+}
+
+textarea:focus, textarea:hover {
+
+  height: 150px;
+  background:#fff;
+}
+
+input[type="submit"] {
+  width: 100%;
+  font-size:80%;
+  font-weight: bold;
+  margin: 10px 0px;
+  padding: 10px;
+  background: #e86f67;
+  color: #FFF;
+  border: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px;
+}
+
+.dashboard_wrapper{
+  padding: 10px;
+}
+
+.focus {
+  background:#acf3ff;
+}
+
+.wd33per {
+  width:30%;
+}
+
+.caption {
+  margin-top:10px;
+}
+
+.photoSet {
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 20px;
+}
+
+.comment_icon {
+  float: left;
+}
+
+.comment_title {
+  float: left;
+  margin-left: 5px;
+}
+
+.comment_user {
+  color: #e86f67;
+  font-weight: bold;
+}
+
+.comment_created {
+  color: #aaaaaa;
+  font-size: 13px;
+  padding-top:10px;
+}
+
+.comment_content {
+  font-size: 13px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.date_this {
+  float:left;
+}
+
+.date_from {
+  color: #aaaaaa;
+  float:right;
+  font-size: 13px;
+  padding-top:10px;
+}

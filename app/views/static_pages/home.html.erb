@@ -1,3 +1,17 @@
-<% provide(:title, 'Home') %>
-<h1>comet</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<%= content_tag(:div, :class => "center") do -%>
+  <div class="viewport">
+    <div class="flipsnap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+  </div>
+  <%= content_tag(:p, "登録済みの方はこちら", :class => "caption") %>
+  <%= content_tag(:div, :class => "button") do -%>
+    <%= link_to "ログイン", signin_path %>
+  <% end -%>
+  <%= content_tag(:p, "登録がお済みでない方はこちら", :class => "caption") %>
+  <%= content_tag(:div, :class => "button") do -%>
+    <%= link_to "登録", signup_path %>
+  <% end -%>
+<% end -%>

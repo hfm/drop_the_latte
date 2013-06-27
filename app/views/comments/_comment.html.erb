@@ -1,0 +1,5 @@
+<li>
+  <%= content_tag(:span, User.find(comment.other_id).name, :class => "comment_user") %>
+  <%= content_tag(:span, comment.content, :class => "comment_content") %>
+  <%= content_tag(:span, comment.created_at.strftime("%d") + "日前", :class => "comment_created") %>
+</li>
