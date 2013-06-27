@@ -150,10 +150,10 @@ describe User do
     let(:other) { FactoryGirl.create(:user) }
     let(:photo) { FactoryGirl.create(:photo, user:@user) }
     let!(:old_comment) do
-      FactoryGirl.create(:comment, photo:photo, user:@user, other_id:other.id, created_at: 1.day.ago)
+      FactoryGirl.create(:comment, photo:photo.id, user:@user, other_id:other.id, created_at: 1.day.ago)
     end
     let!(:new_comment) do
-      FactoryGirl.create(:comment, photo:photo, user:@user, other_id:other.id, created_at: 1.hour.ago)
+      FactoryGirl.create(:comment, photo:photo.id, user:@user, other_id:other.id, created_at: 1.hour.ago)
     end
 
     it "should destroy associated comments" do
