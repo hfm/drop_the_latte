@@ -22,7 +22,7 @@ describe "Authentication" do
       before { click_button "ログイン" }
 
       it { should have_title('ログイン') }
-      it { should have_selector('div.alert.alert-error', text: 'Invalid') }
+      it { should have_selector('div.alert.alert-error', text: 'メールまたはパスワードが違います') }
     end
 
     describe "with valid information" do
@@ -105,14 +105,8 @@ describe "Authentication" do
       end
 
       describe "in the Comments controller" do
-        describe "submitting to the create action" do
+        pending "submitting to the create action" do
           before { post comments_path }
-          specify { expect(response).to redirect_to(signin_path) }
-        end
-
-        describe "submitting to the destroy action" do
-          let(:other) { FactoryGirl.create(:user) }
-          before { delete photo_path(FactoryGirl.create(:comment, user_id:user.id, other_id:other.id)) }
           specify { expect(response).to redirect_to(signin_path) }
         end
       end
