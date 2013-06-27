@@ -9,7 +9,7 @@
           <%= form_for(Comment.new) do |f| %>
             <%= hidden_field_tag 'photo_id', photo.id %>
             <%= f.text_field("content", :class => "text_content") %>
-            <%= f.submit("", :size => "32x32", :class => "comment btn btn-#{photo.id}") %>
+            <%= f.submit("コメント", :class => "comment btn btn-#{photo.id}") %>
           <% end %>
         </h3>
         <% if @comments.any? %>
