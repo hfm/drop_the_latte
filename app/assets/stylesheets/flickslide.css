@@ -1,0 +1,19 @@
+.viewport {
+    width: 320px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.flipsnap {
+    width: 960px; /* 320px(item width) * 3(item count) */
+}
+.item {
+    float: left;
+    width: 310px;
+    font-size: 50px;
+    text-align: center;
+    padding: 50px 0;
+    background: #EFEFEF;
+    border: 5px solid #999;
+    color: #666;
+    cursor: pointer;
+}
