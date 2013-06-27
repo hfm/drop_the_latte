@@ -1,0 +1,11 @@
+<% provide(:title, "設定変更") %>
+<h1>Update your profile</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'fields', f: f %>
+      <%= f.submit "変更", :class => "btn" %>
+    <% end %>
+  </div>
+</div>
