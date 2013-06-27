@@ -1,20 +1,20 @@
 <% provide(:title, "ログイン") %>
 <h1>ログイン</h1>
 
-<div class="row">
-  <%= form_tag sessions_path do |f| %>
-    <p class="form">
-      <h3><%= label_tag :email %></h3>
-      <%= text_field_tag :email %>
-    </p>
+<%= content_tag(:div, :class => "row") do -%>
+  <%= form_for(:session, url: sessions_path) do |f| %>
+    <%= content_tag(:p, :class => "form") do -%>
+      <h3><%= f.label :email %></h3>
+      <%= f.text_field :email %>
+    <% end -%>
 
-    <p class="form">
-      <h3><%= label_tag :password %></h3>
-      <%= password_field_tag :password %>
-    </p>
+    <%= content_tag(:p, :class => "form") do -%>
+      <h3><%= f.label :password %></h3>
+      <%= f.password_field :password %>
+    <% end -%>
 
-    <%= submit_tag "ログイン", class: "btn btn-large btn-primary" %>
+    <%= f.submit "ログイン", :class => "btn" %>
   <% end %>
+<% end -%>
 
-    <p class="caption">New user? <%= link_to "サインアップ", signup_path %></p>
-</div>
+<p class="caption">登録がお済みでない方は <%= link_to "こちら", signup_path %> からどうぞ。</p>
