@@ -154,11 +154,11 @@ form p {
 
 input, select {
   background: #dedede;
-  width: auto;
-  margin: 0;
+  width: 100%;
   font-size: 120%;
-  padding: 5px;
+  padding: 10px 0;
   border: none;
+  margin-top: 10px;
 }
 
 input:focus, input:hover {
@@ -166,25 +166,27 @@ input:focus, input:hover {
 }
 
 textarea {
-  width: auto;
+  width: 100%;
   font-size: 120%;
   padding: 5px;
   height: 50px;
 }
 
 textarea:focus, textarea:hover {
+
   height: 150px;
   background:#fff;
 }
 
 input[type="submit"] {
-  width: auto;
+  width: 100%;
   font-size:80%;
   font-weight: bold;
-  margin: 10px 0 0 0;
+  margin: 10px 0px;
   padding: 10px;
   background: #e86f67;
   color: #FFF;
+  border: none;
   -webkit-appearance: none;
   -webkit-border-radius: 5px;
 }
@@ -211,6 +213,15 @@ input[type="submit"] {
 
 .date {
   font-size: 25px;
+}
+
+.comment_icon {
+  float: left;
+}
+
+.comment_title {
+  float: left;
+  margin-left: 5px;
 }
 
 .comment_user {
