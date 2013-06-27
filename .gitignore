@@ -19,3 +19,4 @@ Gemfile.lock
 
 *.orig
 coverage/
+public/system/
