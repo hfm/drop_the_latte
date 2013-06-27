@@ -4,7 +4,7 @@
     <%= content_tag(:div, :class => "photoSet") do -%>
       <% @photos.each do |photo| %>
         <%= content_tag(:div, photo.took_date, :class => "date") %>
-        <%= link_to image_tag("layouts/sugoi.jpg", :id => "", :alt => "") %>
+        <%= link_to image_tag(photo.content, :id => "", :alt => "") %>
         <h3>
           <%= form_for(Comment.new) do |f| %>
             <%= hidden_field_tag 'photo_id', photo.id %>
