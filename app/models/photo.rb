@@ -1,7 +1,7 @@
 class Photo < ActiveRecord::Base
   belongs_to :user
   has_many :comments, dependent: :destroy
-  has_attached_file :content, styles: { }, default_url: "
+  has_attached_file :content
 
   default_scope -> { order('created_at DESC') }
   validates :user_id, presence: true
