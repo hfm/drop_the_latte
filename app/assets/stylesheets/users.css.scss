@@ -212,7 +212,7 @@ input[type="submit"] {
 }
 
 .date {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .comment_icon {
@@ -235,4 +235,19 @@ input[type="submit"] {
 
 .clearfix {
   clear: both;
+}
+
+.date_this {
+  float:left;
+}
+
+.date_icon {
+  float: right;
+}
+
+.date_from {
+  color: #aaaaaa;
+  float:right;
+  font-size: 13px;
+  padding-top:10px;
 }
