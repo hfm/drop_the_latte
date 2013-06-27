@@ -38,10 +38,6 @@ footer,header,hgroup,menu,nav,section {
   display:block;
 }
 
-nav ul {
-  list-style:none;
-}
-
 a {
   margin:0;
   padding:0;
@@ -76,13 +72,45 @@ h1 {
   padding:10px;
 }
 
+nav {
+  z-index: 1;
+  position: absolute;
+}
+
+/* ヘッダー */
 .navbar {
+  height: 50px;
   background: #e86f67;
   margin: 0;
-  text-align: center;
   padding: 10px;
 }
 
+.navbar-inner {
+  position: relative;
+}
+
+/* 写真アップロードボタン */
+#photo {
+  position: absolute;
+  left: 0px;
+}
+
+/* ロゴ */
+#logo {
+  position: absolute;
+  left: 100px;
+}
+
+/* メニュー */
+.container {
+}
+
+.container ul li {
+  list-style:none;
+  float: left;
+}
+
+/* フォーム */
 .form {
   margin-bottom: 10px;
 }
@@ -161,6 +189,10 @@ input[type="submit"] {
   -webkit-border-radius: 5px;
 }
 
+.dashboard_wrapper{
+  padding: 10px;
+}
+
 .focus {
   background:#acf3ff;
 }
@@ -171,4 +203,25 @@ input[type="submit"] {
 
 .caption {
   margin-top:10px;
+}
+
+.photoSet {
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 25px;
+}
+
+.comment_user {
+  color: #e86f67;
+  font-weight: bold;
+}
+
+.comment_content {
+  font-size: 13px;
+}
+
+.clearfix {
+  clear: both;
 }

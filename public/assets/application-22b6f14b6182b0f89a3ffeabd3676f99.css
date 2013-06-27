@@ -1,0 +1,175 @@
+@charset "UTF-8";/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+.clearfix:after {    content: ".";     display: block;     height: 0;     clear: both;     visibility: hidden;}div.flickSlideContainer {	position:relative;	width:100%;	border:1px #CCC solid;	border-top:0px;	-webkit-box-sizing:border-box;	-webkit-box-shadow: rgba(0, 0, 0, 0.0976562) 0px 1px 3px, rgba(255, 255, 255, 0) 0px 0px 0px inset;}div.moveWrap {	position:relative;	overflow:hidden;	width:100%;	height:auto;	-webkit-box-sizing:border-box;}ul.moveWrapBG {	display:inline-block;	position:relative;	width:100%;	height:auto;	visibility:hidden;	-webkit-box-sizing:border-box;	margin:0;	padding:0;}/*div.moveWrap:after, *//*ul.moveWrapBG:after{	content:'.';	visibility:hidden;	width:100%;	line-height:0;	clear:both;}*/div.slideMask {	position:absolute;	top:0;	left:0;	border:4px #FFF solid;	-webkit-box-sizing:border-box;	margin-right:1px;}div.moveWrap>ul.move {	position:relative;	left:0;	top:0;	list-style:none;	padding:0;	margin:0;	width:10000px;	-webkit-transition:all 0.6s ease-in-out;	-webkit-transform:translate3d(0,0,0);	/*-webkit-transition-duration: 400ms;	-webkit-transition-property: -webkit-transform;	*/	margin:0;	padding:0;	display:none;}div.moveWrap>ul.move li.slideUnit {    float:left;    list-style:none;	padding:0;	margin:0;	text-align:center;	-webkit-box-sizing:border-box;}li.slideUnit>div {    display:inline-block;	vertical-align:middle;	text-align:center;	padding:4px 4px 4px 4px;	-webkit-box-sizing:border-box;}div.flickSlideBottom {    width:100%;	margin-top:5px;}div.flickSlideBottom div.bottomLeft, div.flickSlideBottom div.bottomRight {	display:table-cell;	border:1px #CCC solid;	-webkit-box-sizing:border-box;	-webkit-box-shadow: rgba(0, 0, 0, 0.0976562) 0px 1px 3px, rgba(255, 255, 255, 1) 0px 0px 0px inset;	vertical-align:middle;	background: -webkit-gradient(		linear, left top, left bottom, 		from(#ffffff),		color-stop(0.50, #ffffff),		color-stop(0.50, #f7f7f7),		to(#d4d4d4));}div.flickSlideBottom div.bottomLeft.off, div.flickSlideBottom div.bottomRight.off {	background: -webkit-gradient(		linear, left top, left bottom, 		from(#f0f0f0),		to(#d0d0d0));	-webkit-box-shadow: rgba(0, 0, 0, 0.0976562) 0px 1px 3px, rgba(255, 255, 255, 1) 1px 1px 1px inset;}div.flickSlideBottom div.bottomRight {	border-radius: 3px;	-webkit-border-radius: 3px;	border-bottom-right-radius:0px;	border-top-right-radius:0px;}div.flickSlideBottom div.bottomLeft {	border-radius: 3px;	-webkit-border-radius: 3px;	border-bottom-left-radius:0px;	border-top-left-radius:0px;}div.flickSlideBottom div.bottomLeft:after {	font-size:10px;    content:'Prev';	padding:5px;	width:50px;	text-align:left;	display:table-cell;}div.flickSlideBottom div.bottomLeft:before {    content:url(arrowL.png);	padding:5px;	text-align:left;	display:table-cell;}div.flickSlideBottom div.bottomRight:before {	font-size:10px;    content:'Next';	padding:5px;	width:50px;	text-align:right;	display:table-cell;}div.flickSlideBottom div.bottomRight:after {    content:url(arrowR.png);	padding:5px;	text-align:right;	display:table-cell;}div.flickSlideBottom ul.slidePager {	display:table-cell;	width:100%;	text-align:center;	margin:0;	padding:0;}div.flickSlideBottom ul.slidePager li.slidePagerPointer {	display:inline-block;	background-color:#CCC;	width:10px;	height:10px;	margin:10px;	border-radius: 6px;	-webkit-border-radius: 6px;}div.flickSlideBottom ul.slidePager li.slidePagerPointer.active {    -webkit-box-shadow:		0px 0px 4px rgba(255,0,153,0.8),		inset 0px 0px 1px rgba(255,000,217,1);	background-color:#F6C;}
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  word-break: break-all; }
+
+body {
+  color: #444444;
+  width: auto; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+a {
+  margin: 0;
+  padding: 0;
+  color: #e86f67;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+img, iframe {
+  max-width: 100%; }
+
+/* resret end */
+h1 {
+  font-size: 25px;
+  margin: 10px; }
+
+.row {
+  padding: 10px; }
+
+/* ヘッダー */
+.navbar {
+  height: 50px;
+  background: #e86f67;
+  margin: 0;
+  text-align: center;
+  padding: 10px;
+  position: relative; }
+
+/* ロゴ */
+#logo {
+  position: absolute; }
+
+/* メニュー */
+.container {
+  position: absolute;
+  right: 10px; }
+
+.container ul li {
+  list-style: none;
+  float: left; }
+
+/* フォーム */
+.form {
+  margin-bottom: 10px; }
+
+.center {
+  text-align: center;
+  padding: 10px; }
+
+.button {
+  width: auto;
+  background: #e86f67;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
+
+.button a {
+  color: #FFF;
+  font-weight: bold;
+  display: inline-block;
+  width: 280px;
+  height: 20px; }
+
+.btn {
+  background: #EEE;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: #111;
+  width: 100px;
+  padding: 10px 0; }
+
+form p {
+  font-size: 100%; }
+
+input, select {
+  background: #dedede;
+  width: auto;
+  margin: 0;
+  font-size: 120%;
+  padding: 5px;
+  border: none; }
+
+input:focus, input:hover {
+  background: #dedede; }
+
+textarea {
+  width: auto;
+  font-size: 120%;
+  padding: 5px;
+  height: 50px; }
+
+textarea:focus, textarea:hover {
+  height: 150px;
+  background: #fff; }
+
+input[type="submit"] {
+  width: auto;
+  font-size: 80%;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  padding: 10px;
+  background: #e86f67;
+  color: #FFF;
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px; }
+
+.focus {
+  background: #acf3ff; }
+
+.wd33per {
+  width: 30%; }
+
+.caption {
+  margin-top: 10px; }
