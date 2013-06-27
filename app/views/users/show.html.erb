@@ -3,7 +3,11 @@
   <% if @photos.any? %>
     <%= content_tag(:div, :class => "photoSet") do -%>
       <% @photos.each do |photo| %>
-        <%= content_tag(:div, photo.took_date, :class => "date") %>
+        <%= content_tag(:div, :class => "date") do -%>
+          <%= content_tag(:span, photo.took_date.strftime("%Y年%m月%d日"), :class => "date_this" ) %>
+          <%= content_tag(:span, (Time.zone.now.day - photo.took_date.day).to_s + "日前", :class => "date_from" ) %>
+        <% end -%>
+        
         <%= link_to image_tag(photo.content, :id => "", :alt => "") %>
         <h3>
           <%= form_for(Comment.new) do |f| %>
