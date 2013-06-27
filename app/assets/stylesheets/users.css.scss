@@ -89,10 +89,16 @@ nav {
   position: relative;
 }
 
+/* 写真アップロードボタン */
+#photo {
+  position: absolute;
+  left: 0px;
+}
+
 /* ロゴ */
 #logo {
   position: absolute;
-  left: 0px;
+  left: 100px;
 }
 
 /* メニュー */
@@ -183,6 +189,10 @@ input[type="submit"] {
   -webkit-border-radius: 5px;
 }
 
+.dashboard_wrapper{
+  padding: 10px;
+}
+
 .focus {
   background:#acf3ff;
 }
@@ -193,4 +203,25 @@ input[type="submit"] {
 
 .caption {
   margin-top:10px;
+}
+
+.photoSet {
+  margin-bottom: 20px;
+}
+
+.date {
+  font-size: 25px;
+}
+
+.comment_user {
+  color: #e86f67;
+  font-weight: bold;
+}
+
+.comment_content {
+  font-size: 13px;
+}
+
+.clearfix {
+  clear: both;
 }
