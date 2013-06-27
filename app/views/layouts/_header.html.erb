@@ -1,34 +1,36 @@
 <script type="text/javascript">
   $(document).ready(function(){
-      $("#submit").hide();
-      $("#photo_content").change(function(){
-         $("#submit").click();
-      })
+    $("#submit").hide();
+    $("#photo_content").change(function(){
+      $("#submit").click();
+    })
   });
 </script>
 
 <header class="navbar">
-<div class="navbar-inner">
-  <% if signed_in? %>
-    <%= form_for(Photo.new) do |f| %>
-      <%= f.file_field :content %>
-      <%= f.submit(:id => "submit") %>
-  <% end %>
-  <%= link_to image_tag("layouts/photo_icon.png", :size => "25x25", :id => "photo", :alt => "photo") %>
-<% end %>
-<%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "logo") , user_path(current_user) %>
-<div class="container">
-  <% if signed_in? %>
-    <nav>
-    <ul>
-      <li class="user">
-      <%= link_to image_tag("layouts/user_icon.png", :size => "100x25", :alt => "user"), current_user %>
-      </li>
-      <li class="setting"><%= link_to image_tag("layouts/setings_icon.png", :size => "100x25", :alt => "settings"), edit_user_path(current_user) %></li>
-      <li class="logout"><%= link_to image_tag("layouts/logout_icon.png", :size => "100x25", :alt => "logout", :id => "logout"), signout_path, method: "delete" %></li>
-    </ul>
-    </nav>
-  <% end %>
-</div>
+  <div class="navbar-inner">
+    <% if signed_in? %>
+      <%= form_for(Photo.new) do |f| %>
+        <%= f.file_field :content %>
+        <%= f.submit(:id => "submit") %>
+      <% end %>
+      <%= link_to image_tag("layouts/photo_icon.png", :size => "25x25", :id => "photo", :alt => "photo") %>
+      <%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "logo") , user_path(current_user) %>
+    <% else %>
+      <%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "logo") , root_path %>
+    <% end %>
+    <div class="container">
+      <% if signed_in? %>
+        <nav>
+          <ul>
+            <li class="user">
+              <%= link_to image_tag("layouts/user_icon.png", :size => "100x25", :alt => "user"), current_user %>
+            </li>
+            <li class="setting"><%= link_to image_tag("layouts/setings_icon.png", :size => "100x25", :alt => "settings"), edit_user_path(current_user) %></li>
+            <li class="logout"><%= link_to image_tag("layouts/logout_icon.png", :size => "100x25", :alt => "logout", :id => "logout"), signout_path, method: "delete" %></li>
+          </ul>
+        </nav>
+      <% end %>
+    </div>
   </div>
-  </header>
+</header>
