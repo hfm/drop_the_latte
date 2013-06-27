@@ -4,7 +4,6 @@ class CommentsController < ApplicationController
     @comment.user_id  = current_user.id
     @comment.other_id = current_user.id
     if @comment.save!
-      flash[:success] = "Cometted"
       redirect_to user_path(current_user)
     else
       redirect_to user_path(current_user)
