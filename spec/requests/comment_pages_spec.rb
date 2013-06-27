@@ -7,17 +7,17 @@ describe "Comment pages" do
   let(:user) { FactoryGirl.create(:user) }
   before { sign_in user }
 
-  describe "comment creation" do
-    before { visit root_path }
+  pending "comment creation" do
+    before { visit user_path(user) }
 
     describe "with invalid information" do
 
       it "should not create a comment" do
-        expect { click_button "Post" }.not_to change(Comment, :count)
+        expect { click_link "コメント" }.not_to change(Comment, :count)
       end
 
       describe "error messages" do
-        before { click_button "Post" }
+        before { click_link "コメント" }
         it { should have_content('error') }
       end
     end
@@ -26,7 +26,7 @@ describe "Comment pages" do
 
       before { fill_in 'comment_content', with: "Lorem ipsum" }
       it "should create a comment" do
-        expect { click_button "Post" }.to change(Comment, :count).by(1)
+        expect { click_link "コメント" }.to change(Comment, :count).by(1)
       end
     end
   end

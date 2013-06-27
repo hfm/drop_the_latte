@@ -16,6 +16,17 @@ Gemfile.lock
 /log/*.log
 /tmp
 /vendor/ruby/
+/vendor/bundle
+
+/spec/tmp/*
+/public/system/*
+/public/assets/*
 
 *.orig
-coverage/
+/coverage/
+### /Users/o302/.gitignore-boilerplates/rails.gitignore
+
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html

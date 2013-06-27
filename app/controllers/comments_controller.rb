@@ -1,15 +1,13 @@
 class CommentsController < ApplicationController
-  before_action :signed_in_user
-  
   def create
     @comment = current_photo.comments.build(comment_params)
-    if @comment.save
-      flash[:sucess] = "Cometted"
+    @comment.user_id  = current_user.id
+    @comment.other_id = current_user.id
+    if @comment.save!
+      redirect_to user_path(current_user)
+    else
       redirect_to user_path(current_user)
     end
-  end
-
-  def destroy
   end
 
   private

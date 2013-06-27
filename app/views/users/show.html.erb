@@ -1,10 +1,30 @@
-<% provide(:title, "ダッシュボード") %>
+<%= content_tag(:div, :class => "dashboard_wrapper") do -%>
+  <% provide(:title, "ダッシュボード") %>
+  <% if @photos.any? %>
+    <% @photos.each do |photo| %>
+      <%= content_tag(:div, :class => "photoSet") do -%>
 
-<% @user.photos.each do |photo| %>
-  <%= content_tag(:div, photo.took_date) %>
-  <%= link_to image_tag("layouts/sugoi.jpg", :size => "200x200", :id => "", :alt => "") , "#" %>
-  <% photo.comments.each do |comment| %>
-    <%= content_tag(:div, User.find(comment.user_id).name) %>
-    <%= content_tag(:div, comment.content) %>
+        <%= content_tag(:div, :class => "date") do -%>
+          <%= content_tag(:span, photo.took_date.strftime("%Y年%m月%d日"), :class => "date_this" ) %>
+          <%= content_tag(:span, (Time.zone.now.day - photo.took_date.day).to_s + "日前", :class => "date_from" ) %>
+        <% end -%>
+
+        <%= image_tag(photo.content, :id => "", :alt => "") %>
+        <%= form_for(Comment.new) do |f| %>
+          <%= hidden_field_tag 'photo_id', photo.id %>
+          <%= f.text_field("content", :class => "text_content") %>
+          <%= f.submit("コメント", :class => "comment btn btn-#{photo.id}") %>
+        <% end %>
+
+        <% if @comments.any? %>
+          <%= link_to image_tag("layouts/comment_icon.png", :class => "comment_icon", :alt => "comment_icon") %>
+          <h3 class="comment_title">Comments</h3>
+          <br class="clearfix">
+          <ul class="users_comments">
+            <%= render @comments %>
+          </ul>
+        <% end %>
+      <% end -%>
+    <% end %>
   <% end %>
-<% end %>
+<% end -%>
