@@ -40,4 +40,16 @@ module SessionsHelper
   def store_location
     session[:return_to] = request.url
   end
+
+  def current_photo=(photo)
+    @current_photo = photo
+  end
+
+  def current_photo
+    @current_photo ||= Photo.find(params[:photo_id])
+  end
+
+  def current_photo?(photo)
+    photo == current_photo
+  end
 end
