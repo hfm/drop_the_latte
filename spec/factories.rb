@@ -6,8 +6,8 @@ FactoryGirl.define do
     password_confirmation "foobar"
   end
 
-  factory :photo do
-    content File.new(Rails.root + 'spec/support/image/test.jpg')
+  factory :photo do 
+    content { File.new(Rails.root + 'spec/support/image/test.jpg') }
     took_date DateTime.new(2011, 12, 24, 00, 00, 00).strftime("%Y-%m-%d %H:%M:%S %Z")
     user
   end
