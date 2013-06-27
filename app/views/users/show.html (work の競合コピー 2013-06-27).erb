@@ -6,9 +6,9 @@
     <%= link_to image_tag("layouts/sugoi.jpg", :size => "200x200", :id => "", :alt => "") , "#" %>
 
     <%= form_for(Comment.new) do |f| %>
-      <%= hidden_field_tag 'photo_id', photo.id %>
-      <%= f.text_field("content", :class => "text_content") %>
-      <%= f.submit("submit", :size => "32x32", :class => "comment_btn btn btn-#{photo.id}") %>
+      <%= hidden_field 'photo_id', photo.id %>
+      <%= f.text_field("content", "", :class => "text_content") %>
+      <%= f.image_submit("layouts/comment_btn.png", :size => "32x32", :class => "comment_btn btn btn-#{photo.id}") %>
     <% end %>
 
     <% if @comments.any? %>

@@ -13,6 +13,7 @@ end
 
 group :test do
   gem 'selenium-webdriver', '2.0.0'
+  gem 'launchy'
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
   gem 'database_cleaner', '~> 1.0.0.rc2'
@@ -25,6 +26,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'paperclip'
+gem 'exifr'
+gem 'rmagick'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
