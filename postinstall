@@ -1,0 +1,4 @@
+#!/bin/bash
+
+set -e
+ln -s /home/sqale/etc/images /home/sqale/current/public/system
