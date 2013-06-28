@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
-ln -s /home/sqale/etc/database.yml /home/sqale/current/config/database.yml
-ln -s /home/sqale/etc/secret_token.rb /home/sqale/current/confir/initializers/secret_token.rb
+ln -fs /home/sqale/etc/images /home/sqale/current/public/system
+ln -fs /home/sqale/etc/database.yml /home/sqale/current/config/database.yml
+ln -fs /home/sqale/etc/secret_token.rb /home/sqale/current/confir/initializers/secret_token.rb
 
 cd /home/sqale/current/
 bundle install --path=vendor/bundle --quiet --without development:test
