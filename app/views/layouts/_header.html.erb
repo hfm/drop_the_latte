@@ -1,8 +1,9 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $("#submit").hide();
-    $("#photo_content").change(function(){
+    $("#photo_content").change(function(e){
       $("#submit").click();
+      $("#upload").toggle();
     })
   });
 </script>
