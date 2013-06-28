@@ -26,7 +26,8 @@ namespace :db do
       user.photos.each_with_index do |photo, m|
         5.times do |n|
           comment = "おもちかわいい #{n+1}-#{m+1}"
-          photo.comments.create!(content: comment, user_id:user.id, other_id: rand(20) + 1)
+          created_at = rand(1.years).ago
+            photo.comments.create!(content: comment, user_id:user.id, other_id: rand(20) + 1, created_at: created_at)
         end
       end
     end
