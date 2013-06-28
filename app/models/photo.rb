@@ -3,7 +3,7 @@ class Photo < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_attached_file :content
 
-  default_scope -> { order('created_at DESC') }
+  default_scope -> { order('took_date ASC') }
   validates :user_id, presence: true
   validates :took_date, presence: true
   validates_attachment :content, presence: true,
