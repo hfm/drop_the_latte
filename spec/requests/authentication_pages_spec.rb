@@ -64,11 +64,11 @@ describe "Authentication" do
             expect(page).to have_title('設定変更')
           end
 
-          describe "when signing in again" do
+          pending "when signing in again" do
             before do
               delete signout_path
               visit signin_path
-              fill_in "Email",  with: user.email
+              fill_in "Email",    with: user.email
               fill_in "Password", with: user.password
               click_button "ログイン"
             end
