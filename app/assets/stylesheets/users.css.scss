@@ -13,63 +13,63 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
-	margin:0;
-	padding:0;
-	border:0;
-	outline:0;
-	font-size:100%;
-	vertical-align:baseline;
-	background:transparent;
-	font-family: sans-serif;
-	box-sizing:border-box;
-	-webkit-box-sizing:border-box;
-	-moz-box-sizing:border-box;
-	word-break:break-all;
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  font-family: sans-serif;
+  box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  word-break:break-all;
 
 }
 
 body {
- color: #444444;
- width:auto;
+  color: #444444;
+  width:auto;
 }
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
- display:block;
+  display:block;
 }
 
 a {
- margin:0;
- padding:0;
- color: #e86f67;
- font-size:100%;
- vertical-align:baseline;
- background:transparent;
- text-decoration: none;
+  margin:0;
+  padding:0;
+  color: #e86f67;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+  text-decoration: none;
 }
 
 hr {
- display:block;
- height:1px;
- border:0;
- border-top:1px solid #cccccc;
- margin:1em 0;
- padding:0;
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
 }
 
 img,iframe {
- max-width:100%;
+  max-width:100%;
 }
 
 /* resret end */
 
 h1 {
- font-size: 25px;
- margin: 10px;
+  font-size: 25px;
+  margin: 10px;
 }
 
 .row {
- padding:10px;
+  padding:10px;
 }
 
 nav {
@@ -86,13 +86,13 @@ nav {
 }
 
 .navbar-inner {
- position: relative;
+  position: relative;
 }
 
 /* 写真アップロードボタン */
 #photo {
- position: absolute;
- left: 0px;
+  position: absolute;
+  left: 0px;
 }
 
 /* 写真アップロードのfile_fieldとボタン画像の統合 */
@@ -101,13 +101,13 @@ nav {
 }
 
 .file_mask span{
- display:block;
- background-image:url(layouts/photo_icon.png);
- background-position:left top;
- height:25px;
- width:25px;
- cursor:pointer;
- position: absolute;
+  display:block;
+  background-image:url(layouts/photo_icon.png);
+  background-position:left top;
+  height:25px;
+  width:25px;
+  cursor:pointer;
+  position: absolute;
 }
 .file_mask span:hover{
   background-position:left bottom;
@@ -115,8 +115,8 @@ nav {
 
 /* ロゴ */
 #logo {
- position: absolute;
- left: 100px;
+  position: absolute;
+  left: 100px;
 }
 
 /* メニュー */
@@ -124,8 +124,8 @@ nav {
 }
 
 .container ul li {
- list-style:none;
- float: left;
+  list-style:none;
+  float: left;
 }
 
 /* フォーム */
@@ -156,38 +156,38 @@ nav {
 }
 
 .btn {
- background: #EEE;
- border: 1px solid #DDD;
- border-radius: 4px;
- -moz-border-radius: 4px;
- -webkit-border-radius: 4px;
- color: #111;
- width: 100px;
- padding: 10px 0;
+  background: #EEE;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: #111;
+  width: 100px;
+  padding: 10px 0;
 }
 
 form p {
- font-size:100%;
+  font-size:100%;
 }
 
 input, select {
- background: #dedede;
- width: 100%;
- font-size: 120%;
- padding: 10px 0;
- border: none;
- margin-top: 10px;
+  background: #dedede;
+  width: 100%;
+  font-size: 120%;
+  padding: 10px 0;
+  border: none;
+  margin-top: 10px;
 }
 
 input:focus, input:hover {
- background:#dedede;
+  background:#dedede;
 }
 
 textarea {
- width: 100%;
- font-size: 120%;
- padding: 5px;
- height: 50px;
+  width: 100%;
+  font-size: 120%;
+  padding: 5px;
+  height: 50px;
 }
 
 textarea:focus, textarea:hover {
@@ -197,20 +197,20 @@ textarea:focus, textarea:hover {
 }
 
 input[type="submit"] {
- width: 100%;
- font-size:80%;
- font-weight: bold;
- margin: 10px 0px;
- padding: 10px;
- background: #e86f67;
- color: #FFF;
- border: none;
- -webkit-appearance: none;
- -webkit-border-radius: 5px;
+  width: 100%;
+  font-size:80%;
+  font-weight: bold;
+  margin: 10px 0px;
+  padding: 10px;
+  background: #e86f67;
+  color: #FFF;
+  border: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 5px;
 }
 
 .dashboard_wrapper{
- padding: 10px;
+  padding: 10px;
 }
 
 .focus {
@@ -230,16 +230,16 @@ input[type="submit"] {
 }
 
 .date {
- font-size: 20px;
+  font-size: 20px;
 }
 
 .comment_icon {
- float: left;
+  float: left;
 }
 
 .comment_title {
- float: left;
- margin-left: 5px;
+  float: left;
+  margin-left: 5px;
 }
 
 .comment_user {
@@ -254,15 +254,15 @@ input[type="submit"] {
 }
 
 .comment_content {
- font-size: 13px;
+  font-size: 13px;
 }
 
 .clearfix {
- clear: both;
+  clear: both;
 }
 
 .date_this {
- float:left;
+  float:left;
 }
 
 .date_from {
