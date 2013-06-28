@@ -18,12 +18,11 @@ class PhotosController < ApplicationController
       @photo.took_date ||= Time.now
 
       if  @photo.save
-        flash[:success] = "Photo uploaded"        
-        redirect_to user_path(current_user)
+        flash[:success] = "Photo uploaded"
       else
         flash[:error] = "Photo upload error"
-        redirect_to user_path(current_user)
       end
+      redirect_to user_path(current_user)
     else
       flash[:error] = "JPG, JPEG files are only supported"
       redirect_to user_path(current_user)
