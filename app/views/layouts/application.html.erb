@@ -17,6 +17,11 @@
       <% end %>
       <%= yield %>
     </div>
+      <div id="upload">
+        <div id="upload_img">
+        <%= image_tag("layouts/loading.gif", :size => "200x200", :alt => "upload") %>
+        </div>
+      </div>
     <script>
       jQuery(document).ready(function () {
         jQuery('header nav').meanmenu();
