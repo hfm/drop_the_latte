@@ -23,4 +23,14 @@ describe "Static pages" do
     click_link "登録"
     expect(page).to have_title(full_title('登録'))
   end
+
+  describe "When signed in" do
+    let(:user) { FactoryGirl.create(:user) }
+    before do
+      sign_in user
+      visit root_path
+    end
+
+    it { should have_title("ダッシュボード") }
+  end
 end

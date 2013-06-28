@@ -17,8 +17,9 @@ namespace :db do
 
     users = User.all(limit: 6)
     10.times do
+      content = File.new(Rails.root + 'lib/tasks/omochi.jpg')
       took_date = rand(10.years).ago
-      users.each { |user| user.photos.create!(took_date: took_date) }
+      users.each { |user| user.photos.create!(took_date: took_date, content: content) }
     end
 
     users.each do |user|
