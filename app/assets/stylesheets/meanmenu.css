@@ -91,18 +91,6 @@ visibility: visible;
 border-bottom: none;
 margin-bottom: 0;
 }
-.mean-container .mean-nav ul li li li a {
-width: 70%;
-padding: 1em 15%;
-}
-.mean-container .mean-nav ul li li li li a {
-width: 60%;
-padding: 1em 20%;
-}
-.mean-container .mean-nav ul li li li li li a {
-width: 50%;
-padding: 1em 25%;
-}
 .mean-container .mean-nav ul li a:hover {
 background: #252525;
 background: rgba(255,255,255,0.1);
