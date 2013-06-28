@@ -19,7 +19,7 @@ Gemfile.lock
 /vendor/bundle
 
 /spec/tmp/*
-/public/system/*
+/public/system
 /public/assets/*
 
 .rspec
