@@ -10,7 +10,7 @@ class PhotosController < ApplicationController
     if @photo.save
       pic_path = (@photo.content).to_s
       pic_path_split = pic_path.split("/")
-      pic_name = pic_path_split.last.split("?");''
+      pic_name = pic_path_split.last.split("?")
       path_num = "%03d" % ((@photo.id).to_i)
 
       @photo.took_date = (EXIFR::JPEG.new('public/system/photos/contents/000/000/' +
