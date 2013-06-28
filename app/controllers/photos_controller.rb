@@ -17,9 +17,7 @@ class PhotosController < ApplicationController
                                           path_num.to_s + '/original/' + pic_name[0])).date_time_original
       @photo.took_date ||= Time.now
 
-      if  @photo.save
-        flash[:success] = "Photo uploaded"
-      else
+      if !@photo.save
         flash[:error] = "Photo upload error"
       end
       redirect_to user_path(current_user)
