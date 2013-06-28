@@ -20,7 +20,6 @@ Gemfile.lock
 
 /spec/tmp/*
 /public/system
-/public/assets/*
 
 .rspec
 
