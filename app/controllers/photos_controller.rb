@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
     @photo = current_user.photos.build(photo_params)
     @photo.took_date = Time.now
 
-    if @photo.save!
+    if @photo.save
       pic_path = (@photo.content).to_s
       pic_path_split = pic_path.split("/")
       pic_name = pic_path_split.last.split("?")
@@ -15,11 +15,17 @@ class PhotosController < ApplicationController
 
       @photo.took_date = (EXIFR::JPEG.new('public/system/photos/contents/000/000/' +
                                           path_num.to_s + '/original/' + pic_name[0])).date_time_original
+      @photo.took_date ||= Time.now
 
-      if  @photo.save!
-        flash[:sucess] = "Photo uploaded"
-        redirect_to user_path(current_user)
+      if  @photo.save
+        flash[:success] = "Photo uploaded"
+      else
+        flash[:error] = "Photo upload error"
       end
+      redirect_to user_path(current_user)
+    else
+      flash[:error] = "JPG, JPEG files are only supported"
+      redirect_to user_path(current_user)
     end
   end
 

@@ -1,10 +1,20 @@
 <script type="text/javascript">
-  $(document).ready(function(){
-    $("#submit").hide();
-    $("#photo_content").change(function(){
-      $("#submit").click();
-    })
-  });
+$(document).ready(function(){
+  $("#submit").hide();
+  $("#photo_content").change(function(){
+    $("#submit").click();
+    $("#upload").toggle();
+  })
+});
+
+$(function(){
+	$("#photo_content").change(function(){
+		$("#photo").val($("#photo_content").val());
+	});
+	$("#photo").click(function(){
+		$("#photo_content").click();
+	});
+});
 </script>
 
 <header class="navbar">
@@ -12,10 +22,13 @@
     <% if signed_in? %>
       <%= form_for(Photo.new) do |f| %>
         <%= f.file_field :content %>
+        <label class="file_mask">
+	        <span><!– 画像用spanタグ –></span>
+        <input type="text" id="photo", alt="photo">
+        </label>
         <%= f.submit(:id => "submit") %>
       <% end %>
-      <%= link_to image_tag("layouts/photo_icon.png", :size => "25x25", :id => "photo", :alt => "photo") %>
-      <%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "logo") , user_path(current_user) %>
+      <%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "log") , user_path(current_user) %>
     <% else %>
       <%= link_to image_tag("layouts/logo.png", :size => "100x26", :id => "logo", :alt => "logo") , root_path %>
     <% end %>
