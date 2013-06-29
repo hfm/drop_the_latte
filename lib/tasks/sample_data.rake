@@ -17,15 +17,17 @@ namespace :db do
 
     users = User.all(limit: 6)
     10.times do
+      content = File.new(Rails.root + 'lib/tasks/omochi.jpg')
       took_date = rand(10.years).ago
-      users.each { |user| user.photos.create!(took_date: took_date) }
+      users.each { |user| user.photos.create!(took_date: took_date, content: content) }
     end
 
     users.each do |user|
       user.photos.each_with_index do |photo, m|
         5.times do |n|
           comment = "おもちかわいい #{n+1}-#{m+1}"
-          photo.comments.create!(content: comment, user_id:user.id, other_id: rand(20) + 1)
+          created_at = rand(1.years).ago
+            photo.comments.create!(content: comment, user_id:user.id, other_id: rand(20) + 1, created_at: created_at)
         end
       end
     end
