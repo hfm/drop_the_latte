@@ -5,7 +5,7 @@
       <%= content_tag(:div, :class => "photoSet") do -%>
 
         <%= content_tag(:div, :class => "date") do -%>
-          <%= content_tag(:span, photo.took_date.strftime("%Y年%m月%d日"), :class => "date_this" ) %>
+          <%= content_tag(:span, photo.took_date.strftime("%Y年%m月%d日撮影"), :class => "date_this" ) %>
           <%= content_tag(:span, ((Time.zone.now - photo.took_date) / 60 / 60 / 24 ).round.to_s + "日前", :class => "date_from" ) %>
         <% end -%>
 
