@@ -232,10 +232,14 @@ input[type="submit"] {
 
 .date {
   font-size: 20px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .comment_icon {
   float: left;
+  height: 18px;
+  width: 18px;
 }
 
 .comment_title {
