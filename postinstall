@@ -7,8 +7,7 @@ ln -fs ~/etc/database.yml ~/current/config/database.yml
 ln -fs ~/etc/secret_token.rb ~/current/confir/initializers/secret_token.rb
 
 cd ~/current/
-bundle install --path=vendor/bundle --quiet --without development:test
-bundle exec rake assets:precompile
-bundle exec rake db:migrate
+RAILS_ENV=production bundle exec rake assets:precompile
+RAILS_ENV=production bundle exec rake db:migrate
 
 /etc/init.d/app restart

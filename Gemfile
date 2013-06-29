@@ -5,9 +5,9 @@ gem 'bcrypt-ruby'
 gem 'faker'
 gem 'will_paginate'
 gem 'mysql2'
+gem 'sqlite3'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.7'
   gem 'rspec-rails'
 end
 
