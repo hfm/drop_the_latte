@@ -7,6 +7,7 @@ Gemfile.lock
 /log/*.log
 /tmp
 /vendor/bundle
+/vendor/ruby
 
 /spec/tmp/*
 capybara-*.html

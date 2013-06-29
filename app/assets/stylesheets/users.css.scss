@@ -242,6 +242,8 @@ input[type="submit"] {
 /* 日付 */
 .date {
   font-size: 20px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 /* コメントのアイコン */
