@@ -232,6 +232,8 @@ input[type="submit"] {
 
 .date {
   font-size: 20px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .comment_icon {
