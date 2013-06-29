@@ -2,6 +2,7 @@
 
 set -e
 ln -fs ~/etc/images ~/current/public/system
+ln -fs ~/etc/newrelic.yml ~/current/config/newrelic.yml
 ln -fs ~/etc/database.yml ~/current/config/database.yml
 ln -fs ~/etc/secret_token.rb ~/current/confir/initializers/secret_token.rb
 
