@@ -102,7 +102,7 @@ nav {
 
 .file_mask span{
   display:block;
-  background-image:url(layouts/photo_icon.png);
+  background-image: asset-url("photo_icon.png");
   background-position:left top;
   background-size: 25px 25px;
   height:25px;
@@ -232,6 +232,8 @@ input[type="submit"] {
 
 .date {
   font-size: 20px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .comment_icon {
