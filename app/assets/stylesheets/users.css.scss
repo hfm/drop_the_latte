@@ -57,8 +57,13 @@ hr {
   padding:0;
 }
 
+/* 画像の最大サイズ（スマホ対応） */
 img,iframe {
   max-width:100%;
+}
+
+.clearfix {
+  clear: both;
 }
 
 /* resret end */
@@ -139,6 +144,8 @@ nav {
   padding:10px;
 }
 
+/* ログイン画面のボタン */
+
 .button {
   width: auto;
   background: #e86f67;
@@ -171,6 +178,8 @@ form p {
   font-size:100%;
 }
 
+/* テキスト */
+
 input, select {
   background: #dedede;
   width: 100%;
@@ -178,6 +187,7 @@ input, select {
   padding: 10px 0;
   border: none;
   margin-top: 10px;
+  -webkit-border-radius: 5px;
 }
 
 input:focus, input:hover {
@@ -197,6 +207,7 @@ textarea:focus, textarea:hover {
   background:#fff;
 }
 
+/* submitボタン */
 input[type="submit"] {
   width: 100%;
   font-size:80%;
@@ -210,62 +221,60 @@ input[type="submit"] {
   -webkit-border-radius: 5px;
 }
 
+/* ダッシュボード全体の空き */
 .dashboard_wrapper{
   padding: 10px;
-}
-
-.focus {
-  background:#acf3ff;
-}
-
-.wd33per {
-  width:30%;
 }
 
 .caption {
   margin-top:10px;
 }
 
+/* 投稿一つのまとまり */
 .photoSet {
   margin-bottom: 20px;
 }
 
+/* 日付 */
 .date {
   font-size: 20px;
 }
 
+/* コメントのアイコン */
 .comment_icon {
   float: left;
 }
 
+/* コメントのタイトル */
 .comment_title {
   float: left;
   margin-left: 5px;
 }
 
+/* コメントしたユーザー名 */
 .comment_user {
   color: #e86f67;
   font-weight: bold;
 }
 
+/* コメントした日付 */
 .comment_created {
   color: #aaaaaa;
   font-size: 13px;
   padding-top:10px;
 }
 
+/* コメント内容 */
 .comment_content {
   font-size: 13px;
 }
 
-.clearfix {
-  clear: both;
-}
-
+/* 撮影日 */
 .date_this {
   float:left;
 }
 
+/* 〇〇日前 */
 .date_from {
   color: #aaaaaa;
   float:right;
@@ -273,6 +282,7 @@ input[type="submit"] {
   padding-top:10px;
 }
 
+/* アップロード中 */
 #upload {
   width: 100%;
   height: 100%;
@@ -283,6 +293,7 @@ input[type="submit"] {
   background: rgba(255, 255, 255, 0.8);
 }
 
+/* アップロード中gif */
 #upload_img {
   position: absolute;
   left: 58px;
