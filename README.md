@@ -1,5 +1,5 @@
 # comet
-[![Build Status](https://travis-ci.org/Tacahilo/drop_the_latte.png?branch=release)](https://travis-ci.org/Tacahilo/drop_the_latte)
+[![Build Status](https://travis-ci.org/Tacahilo/drop_the_latte.png?branch=master)](https://travis-ci.org/Tacahilo/drop_the_latte)
 [![Coverage Status](https://coveralls.io/repos/Tacahilo/drop_the_latte/badge.png)](https://coveralls.io/r/Tacahilo/drop_the_latte)
 ## Readme
 
