@@ -30,7 +30,7 @@ time, mark, audio, video {
 
 body {
   color: #444444;
-  width:auto;
+  width: auto;
 }
 
 article,aside,details,figcaption,figure,
@@ -39,26 +39,31 @@ footer,header,hgroup,menu,nav,section {
 }
 
 a {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   color: #e86f67;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
   text-decoration: none;
 }
 
 hr {
-  display:block;
-  height:1px;
-  border:0;
-  border-top:1px solid #cccccc;
-  margin:1em 0;
-  padding:0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
+/* 画像の最大サイズ（スマホ対応） */
 img,iframe {
-  max-width:100%;
+  max-width: 100%;
+}
+
+.clearfix {
+  clear: both;
 }
 
 /* resret end */
@@ -68,10 +73,12 @@ h1 {
   margin: 10px;
 }
 
+/* 囲み */
 .row {
-  padding:10px;
+  padding: 10px;
 }
 
+/* ドロップダウンナビ */
 nav {
   z-index: 1;
   position: absolute;
@@ -97,21 +104,21 @@ nav {
 
 /* 写真アップロードのfile_fieldとボタン画像の統合 */
 #photo_content,#photo{
-  display:none;
+  display: none;
 }
 
 .file_mask span{
-  display:block;
+  display: block;
   background-image: asset-url("photo_icon.png");
   background-position:left top;
   background-size: 25px 25px;
-  height:25px;
-  width:25px;
-  cursor:pointer;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
   position: absolute;
 }
 .file_mask span:hover{
-  background-position:left bottom;
+  background-position: left bottom;
 }
 
 /* ロゴ */
@@ -121,12 +128,14 @@ nav {
 }
 
 /* メニュー */
-.container {
+.container ul li {
+  list-style: none;
+  float: left;
 }
 
-.container ul li {
-  list-style:none;
-  float: left;
+/* アラート表示 */
+.alert {
+  padding: 10px;
 }
 
 /* フォーム */
@@ -136,8 +145,10 @@ nav {
 
 .center {
   text-align: center;
-  padding:10px;
+  padding: 10px;
 }
+
+/* ログイン画面のボタン */
 
 .button {
   width: auto;
@@ -168,8 +179,10 @@ nav {
 }
 
 form p {
-  font-size:100%;
+  font-size: 100%;
 }
+
+/* テキスト */
 
 input, select {
   background: #dedede;
@@ -178,10 +191,11 @@ input, select {
   padding: 10px 0;
   border: none;
   margin-top: 10px;
+  -webkit-border-radius: 5px;
 }
 
 input:focus, input:hover {
-  background:#dedede;
+  background: #dedede;
 }
 
 textarea {
@@ -194,12 +208,13 @@ textarea {
 textarea:focus, textarea:hover {
 
   height: 150px;
-  background:#fff;
+  background: #fff;
 }
 
+/* submitボタン */
 input[type="submit"] {
   width: 100%;
-  font-size:80%;
+  font-size: 80%;
   font-weight: bold;
   margin: 10px 0px;
   padding: 10px;
@@ -210,71 +225,70 @@ input[type="submit"] {
   -webkit-border-radius: 5px;
 }
 
+/* ダッシュボード全体の空き */
 .dashboard_wrapper{
   padding: 10px;
 }
 
-.focus {
-  background:#acf3ff;
-}
-
-.wd33per {
-  width:30%;
-}
-
 .caption {
-  margin-top:10px;
+  margin: 10px;
 }
 
+/* 投稿一つのまとまり */
 .photoSet {
   margin-bottom: 20px;
 }
 
+/* 日付 */
 .date {
   font-size: 20px;
   overflow: hidden;
   word-wrap: break-word;
 }
 
+/* コメントのアイコン */
 .comment_icon {
   float: left;
 }
 
+/* コメントのタイトル */
 .comment_title {
   float: left;
   margin-left: 5px;
 }
 
+/* コメントしたユーザー名 */
 .comment_user {
   color: #e86f67;
   font-weight: bold;
 }
 
+/* コメントした日付 */
 .comment_created {
   color: #aaaaaa;
   font-size: 13px;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
+/* コメント内容 */
 .comment_content {
   font-size: 13px;
 }
 
-.clearfix {
-  clear: both;
-}
-
+/* 撮影日 */
 .date_this {
-  float:left;
+  float: left;
 }
 
+/* 〇〇日前 */
 .date_from {
   color: #aaaaaa;
-  float:right;
+  float: right;
   font-size: 13px;
-  padding-top:10px;
+  padding-top: 10px;
 }
 
+/* アップロード中 */
 #upload {
   width: 100%;
   height: 100%;
@@ -285,8 +299,9 @@ input[type="submit"] {
   background: rgba(255, 255, 255, 0.8);
 }
 
+/* アップロード中gif */
 #upload_img {
   position: absolute;
   left: 58px;
-  top:60px;
+  top: 60px;
 }
