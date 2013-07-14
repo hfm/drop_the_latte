@@ -3,7 +3,13 @@ language: ruby
 rvm:
   - 2.0.0
 
-bundler_args: --without=development:production --path=vendor/bundle
+branches:
+  only:
+    - master
+    - release
+    - develop
+
+bundler_args: --without development:production --path vendor/bundle
 
 before_install:
   - gem update --system
