@@ -1,21 +1,22 @@
-<%#= content_tag(:div :class => 'photo_times') -%>
-  <%#= @photo.took_date %>
-<%#= end -%>
+<%= content_tag(:div, :class => "photoSet") do -%>
+  <%= content_tag(:div, :class => "date") do -%>
+    <%= content_tag(:span, photo.took_date.strftime("%Y年%m月%d日撮影"), :class => "date_this" ) %>
+    <%= content_tag(:span, ((Time.zone.now - photo.took_date) / 60 / 60 / 24 ).round.to_s + "日前", :class => "date_from" ) %>
+  <% end -%>
 
-<%= content_tag(:div) do -%>
-  <%= link_to image_tag("layouts/sugoi.jpg", :size => "200x200", :id => "", :alt => "") , "#" %>
+  <%= image_tag(photo.content, :id => "photo_#{photo.id}") %>
+  <%= form_for(Comment.new) do |f| %>
+    <%= hidden_field_tag 'photo_id', photo.id %>
+    <%= f.text_field("content", :class => "text_content") %>
+    <%= f.submit("コメント", :class => "comment btn btn-#{photo.id}") %>
+  <% end %>
+
+  <% if photo.comments.any? %>
+    <%= image_tag("layouts/comment_icon.png", :size => "16x16", :class => "comment_icon", :alt => "comment_icon") %>
+    <h3 class="comment_title">Comments</h3>
+    <br class="clearfix">
+    <ul class="users_comments">
+      <%= render photo.comments %>
+    </ul>
+  <% end %>
 <% end -%>
-
-<%# if current_user? %>
-  <!-- colored heart -->
-<%# else %>
-  <%# if @user.photo.likes.count != 0 %>
-    <!-- colored heart -->
-  <%# else %>
-    <!-- mono heart -->
-  <%# end %>
-<%# end %>
-
-<%# @user.photo.likes.users each do |user_obj| %>
-  <%# link_to user_obj.name, user_path(user_obj) %> 
-<%# end %>

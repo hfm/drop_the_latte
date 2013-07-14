@@ -8,6 +8,7 @@ Gemfile.lock
 /tmp
 /vendor/bundle
 /vendor/ruby
+/vendor/bin
 
 /spec/tmp/*
 capybara-*.html

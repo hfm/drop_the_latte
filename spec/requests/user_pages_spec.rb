@@ -57,7 +57,6 @@ describe "User pages" do
 
         it { should have_selector('li.logout') }
         it { should have_title('ダッシュボード') }
-        it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
     end
   end
@@ -92,7 +91,6 @@ describe "User pages" do
       end
 
       it { should have_title("ダッシュボード") }
-      it { should have_selector('div.alert.alert-success') }
       it { should have_selector('li.user') }
       it { should have_selector('li.setting') }
       it { should have_selector('li.logout') }

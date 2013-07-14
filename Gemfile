@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby','~> 3.0.0'
 gem 'faker'
 gem 'will_paginate'
 gem 'mysql2'
 gem 'sqlite3'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
 end
 
