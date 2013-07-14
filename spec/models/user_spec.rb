@@ -132,7 +132,7 @@ describe User do
     end
 
     it "should have the right photos in the right order" do
-      expect(@user.photos.to_a).to eq [old_photo, new_photo]
+      expect(@user.photos.to_a).to eq [new_photo, old_photo]
     end
 
     it "should destroy associated photos" do
